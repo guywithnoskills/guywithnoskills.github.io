@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { Volume2, VolumeX, Volume1, Settings } from 'lucide-react';
+import { useNavigate, useLocation, useSearchParams, Link } from 'react-router-dom';
+import { Volume2, VolumeX, Volume1, Settings, Menu, X } from 'lucide-react';
 import { useMusic } from './MusicContext';
 import { Play, Pause, SkipForward } from 'lucide-react';
 
@@ -8,12 +8,27 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
+const NAV_LINKS = [
+  { label: 'Home', path: '/' },
+  { label: 'CV', path: '/cv' },
+  { label: 'Workfolio', path: '/workfolio' },
+  { label: 'Books', path: '/books' },
+  { label: 'Blogs', path: '/blogs' },
+  { label: 'Contact', path: '/contact' },
+];
+
 export default function Layout({ children }: LayoutProps) {
   const [nowPlayingBlink, setNowPlayingBlink] = useState(true);
   const [mobileVolumeOpen, setMobileVolumeOpen] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const { isMuted, volume, isPlaying, trackInfo, setMuted, setVolume, togglePlayPause, nextTrack } = useMusic();
   const navigate = useNavigate();
   const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get('mode') || 'recruiter';
+
+  const navHref = (path: string) => (path === '/' ? path : `${path}?mode=${mode}`);
+  const isActive = (path: string) => location.pathname === path;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -57,10 +72,11 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-[#121212]">
       {/* Fixed Top Bar - Sleek and Simple */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-[#121212] border-b border-[#1DB954] h-[60px] flex items-center justify-between px-4 md:px-6">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-[#121212] border-b border-[#1DB954]">
+      <div className="h-[60px] flex items-center justify-between px-4 md:px-6">
         {/* Left side - Now Playing indicator */}
-        <div className="flex items-center gap-3">
-          <div 
+        <button onClick={handleLogoClick} className="flex items-center gap-3 text-left">
+          <div
             className={`w-3 h-3 rounded-full bg-[#1DB954] transition-opacity duration-500 ${
               (nowPlayingBlink && !isMuted && isPlaying) ? 'opacity-100' : 'opacity-40'
             }`}
@@ -69,7 +85,7 @@ export default function Layout({ children }: LayoutProps) {
             <span className="hidden sm:inline">Spotify UI Inspired Portfolio</span>
             <span className="sm:hidden">Spotify UI Inspired Portfolio</span>
           </span>
-        </div>
+        </button>
 
         {/* Right side - Music controls */}
         <div className="flex items-center gap-2 md:gap-4 relative">
@@ -170,6 +186,21 @@ export default function Layout({ children }: LayoutProps) {
               </div>
             </div>
           </div>
+
+          {/* Mobile Nav Toggle */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setMobileNavOpen(!mobileNavOpen);
+              setMobileVolumeOpen(false);
+            }}
+            className={`md:hidden p-2 rounded-full transition-all duration-300 hover:scale-110 ${
+              mobileNavOpen ? 'text-[#1DB954] bg-[#1DB954]/20' : 'text-[#B3B3B3] hover:text-white'
+            }`}
+            title="Menu"
+          >
+            {mobileNavOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
 
           {/* Mobile Volume Controls */}
           <div className="md:hidden flex items-center gap-2 relative mobile-volume-panel">
@@ -321,10 +352,42 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </div>
 
+      {/* Desktop Nav Row */}
+      <div className="hidden md:flex items-center justify-center gap-8 h-11 bg-[#181818] border-t border-[#282828]">
+        {NAV_LINKS.map((link) => (
+          <Link
+            key={link.path}
+            to={navHref(link.path)}
+            className={`text-sm font-medium transition-colors duration-200 ${
+              isActive(link.path) ? 'text-[#1DB954]' : 'text-[#B3B3B3] hover:text-white'
+            }`}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
 
+      {/* Mobile Nav Dropdown */}
+      {mobileNavOpen && (
+        <div className="md:hidden bg-[#181818] border-t border-[#282828] px-4 py-3 flex flex-col gap-1">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.path}
+              to={navHref(link.path)}
+              onClick={() => setMobileNavOpen(false)}
+              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                isActive(link.path) ? 'text-[#1DB954] bg-[#1DB954]/10' : 'text-[#B3B3B3] hover:text-white hover:bg-white/5'
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      )}
+      </div>
 
       {/* Main Content */}
-      <div className="pt-[60px]">
+      <div className="pt-[60px] md:pt-[104px]">
         {children}
       </div>
 
