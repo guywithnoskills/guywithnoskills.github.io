@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { ImpactStat } from '../components/ImpactStat';
+import { SpotlightCard } from '../components/SpotlightCard';
 import profileImage from '../../assets/profile.webp';
 import energyMissionLogo from 'figma:asset/5b9b71543399cf1011dd8138f18e9c76a8ec3219.png';
 import jakes58Logo from '../../assets/client-jakes58.webp';
@@ -31,17 +33,17 @@ const brands = [
 ];
 
 const work = [
-  { title: 'Social Media Listening Report', tag: 'Jovia Financial Credit Union', result: "An 8x jump in mentions and 14x surge in reach for Jovia's Long Island Marathon sponsorship, tracked week over week" },
-  { title: 'Nursing Brand Persona', tag: 'Molloy University', result: 'Built a data-driven prospect persona from MRI-Simmons national survey data to guide nursing recruitment messaging' },
+  { title: 'Social Media Listening Report', tag: 'Jovia Financial Credit Union', result: "An 8x jump in mentions and 14x surge in reach for Jovia's Long Island Marathon sponsorship, tracked week over week", impact: 147.7, impactLabel: 'Impressions growth' },
+  { title: 'Nursing Brand Persona', tag: 'Molloy University', result: 'Built a data-driven prospect persona from MRI-Simmons national survey data to guide nursing recruitment messaging', impact: 63, impactLabel: 'See it as a career, not a job' },
   { title: 'Dyson India Localization', tag: 'Global Localization', result: "Adapted Dyson's global campaign for the Indian market while staying on brand" },
 ];
 
 const experienceSnapshot = [
-  { title: 'Marketing Strategy Associate', company: 'The EGC Group', period: '2025 – Present' },
-  { title: 'Marketing Coordinator', company: 'Hofstra University', period: '2025' },
-  { title: 'Brand Marketing Strategist', company: 'The Creative Roots', period: '2023 – 2025' },
-  { title: 'Brand Marketing Strategist', company: 'Pixelfox', period: '2022 – 2023' },
-  { title: 'Marketing Manager', company: 'Energy Mission Machineries', period: '2021 – 2022' },
+  { title: 'Marketing Strategy Associate', company: 'The EGC Group', period: '2025 – Present', impact: 57 },
+  { title: 'Marketing Coordinator', company: 'Hofstra University', period: '2025', impact: 30 },
+  { title: 'Brand Marketing Strategist', company: 'The Creative Roots', period: '2023 – 2025', impact: 30 },
+  { title: 'Brand Marketing Strategist', company: 'Pixelfox', period: '2022 – 2023', impact: 66 },
+  { title: 'Marketing Manager', company: 'Energy Mission Machineries', period: '2021 – 2022', impact: 30 },
 ];
 
 const focusAreas = [
@@ -176,17 +178,28 @@ export default function LandingPage() {
             <Link to="/workfolio" className="text-sm text-[#1DB954] hover:underline">View all</Link>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {work.map((item) => (
-              <Link
-                key={item.title}
-                to="/workfolio"
-                className="block p-5 rounded-xl bg-[#1A2A1A] hover:bg-[#223322] transition-colors card-glow-green"
-              >
-                <span className="text-xs text-[#1DB954] font-medium">{item.tag}</span>
-                <h3 className="text-lg font-bold text-white mt-2 mb-2">{item.title}</h3>
-                <p className="text-sm text-[#B3B3B3] leading-relaxed">{item.result}</p>
-              </Link>
-            ))}
+            {work.map((item) => {
+              const highlighted = item.impact != null;
+              return (
+                <SpotlightCard
+                  key={item.title}
+                  className={`rounded-xl bg-[#1A2A1A] hover:bg-[#223322] transition-colors ${
+                    highlighted ? 'border border-[#1DB954]/40 shadow-[0_0_22px_rgba(29,185,84,0.18)]' : 'border border-white/5 card-glow-green'
+                  }`}
+                >
+                  <Link to="/workfolio" className="block p-5">
+                    <span className="text-xs text-[#1DB954] font-medium">{item.tag}</span>
+                    <h3 className="text-lg font-bold text-white mt-2 mb-2">{item.title}</h3>
+                    {highlighted && (
+                      <div className="mb-2">
+                        <ImpactStat value={item.impact as number} label={item.impactLabel as string} size="md" />
+                      </div>
+                    )}
+                    <p className="text-sm text-[#B3B3B3] leading-relaxed">{item.result}</p>
+                  </Link>
+                </SpotlightCard>
+              );
+            })}
           </div>
         </div>
 
@@ -214,6 +227,9 @@ export default function LandingPage() {
             {experienceSnapshot.map((role) => (
               <div key={role.company} className="flex items-baseline justify-between py-3">
                 <div>
+                  {role.impact >= 50 && (
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#1DB954] animate-greenPulse mr-2 align-middle" />
+                  )}
                   <span className="text-white font-medium">{role.title}</span>
                   <span className="text-[#B3B3B3]"> · {role.company}</span>
                 </div>

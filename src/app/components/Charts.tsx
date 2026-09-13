@@ -40,7 +40,11 @@ export function DivergingBarChart({ data, live = true }: { data: DivergingDatum[
                 <span className="text-white font-medium">{d.label}</span>
                 <span className="flex items-center gap-2">
                   <span className="text-[#B3B3B3]">{d.value}</span>
-                  <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-[#1DB954]/15 text-[#1DB954]">
+                  <span
+                    className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold ${
+                      positive ? 'bg-[#1DB954]/15 text-[#1DB954]' : 'bg-[#e0575b]/15 text-[#e0575b]'
+                    }`}
+                  >
                     <Icon size={11} />
                     {positive ? '+' : ''}
                     {d.change}%
@@ -57,7 +61,7 @@ export function DivergingBarChart({ data, live = true }: { data: DivergingDatum[
                   className={`absolute top-0 bottom-0 rounded-full ${
                     positive
                       ? 'bg-linear-to-r from-[#1DB954]/60 to-[#1DB954] left-1/2'
-                      : 'bg-linear-to-l from-[#1DB954]/60 to-[#1DB954] right-1/2'
+                      : 'bg-linear-to-l from-[#e0575b]/60 to-[#e0575b] right-1/2'
                   }`}
                 />
               </div>
