@@ -7,6 +7,8 @@ import jakes58Logo from '../../assets/client-jakes58.webp';
 import joviaLogo from '../../assets/client-jovia.webp';
 import vaughnLogo from '../../assets/client-vaughn.webp';
 import dfvLogo from '../../assets/client-dfv.webp';
+import egcLogo from '../../assets/client-egc.webp';
+import molloyLogo from '../../assets/client-molloy.webp';
 
 const skillGroups = [
   { label: 'Strategy & Insights', items: ['Brand Strategy', 'Integrated Marketing', 'Consumer Insights', 'Audience Segmentation', 'Competitive Intelligence', 'Social Listening', 'Go-to-Market Strategy'] },
@@ -15,9 +17,9 @@ const skillGroups = [
 ];
 
 const brands = [
-  { name: 'The EGC Group', logo: null },
+  { name: 'The EGC Group', logo: egcLogo },
   { name: 'Jovia Financial Credit Union', logo: joviaLogo },
-  { name: 'Molloy University', logo: null },
+  { name: 'Molloy University', logo: molloyLogo },
   { name: "Jake's 58 Casino Hotel", logo: jakes58Logo },
   { name: 'Vaughn College', logo: vaughnLogo },
   { name: 'Designs for Vision', logo: dfvLogo },

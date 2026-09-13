@@ -8,6 +8,8 @@ import jakes58Logo from '../../assets/client-jakes58.webp';
 import joviaLogo from '../../assets/client-jovia.webp';
 import vaughnLogo from '../../assets/client-vaughn.webp';
 import dfvLogo from '../../assets/client-dfv.webp';
+import egcLogo from '../../assets/client-egc.webp';
+import molloyLogo from '../../assets/client-molloy.webp';
 
 const RESUME_FILE = `${import.meta.env.BASE_URL}Malav-Akhani-Resume.pdf`;
 
@@ -19,9 +21,9 @@ const stats = [
 ];
 
 const brands = [
-  { name: 'The EGC Group', logo: null },
+  { name: 'The EGC Group', logo: egcLogo },
   { name: 'Jovia Financial Credit Union', logo: joviaLogo },
-  { name: 'Molloy University', logo: null },
+  { name: 'Molloy University', logo: molloyLogo },
   { name: "Jake's 58 Casino Hotel", logo: jakes58Logo },
   { name: 'Vaughn College', logo: vaughnLogo },
   { name: 'Designs for Vision', logo: dfvLogo },
