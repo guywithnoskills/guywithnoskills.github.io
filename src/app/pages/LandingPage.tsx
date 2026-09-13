@@ -3,11 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import profileImage from '../../assets/profile.webp';
 import pixelfoxLogo from 'figma:asset/c43cf05a710c189a3942d6e9d546839c52216c3c.png';
-import phoenixMillsLogo from 'figma:asset/b99caa44dc87ef7901e8c23bce701518f14df6ff.png';
-import houseOfHiranandaniLogo from 'figma:asset/dba27f58310e1259b05805d98beda4da7e845b60.png';
 import energyMissionLogo from 'figma:asset/5b9b71543399cf1011dd8138f18e9c76a8ec3219.png';
-import amazonPrimeLogo from 'figma:asset/00d3e2ec7a983bfe7d4973b47f787f6286416e66.png';
-import godrejLogo from 'figma:asset/b9392f9a019a1070f0fa70ddbead601f0e6ae455.png';
 
 const RESUME_FILE = `${import.meta.env.BASE_URL}Malav-Akhani-Resume.pdf`;
 
@@ -19,19 +15,21 @@ const stats = [
 ];
 
 const brands = [
-  { name: 'Amazon Prime Video', logo: amazonPrimeLogo },
-  { name: 'Godrej', logo: godrejLogo },
+  { name: 'The EGC Group', logo: null },
+  { name: 'Jovia Financial Credit Union', logo: null },
+  { name: 'Molloy University', logo: null },
+  { name: "Jake's 58 Casino Hotel", logo: null },
+  { name: 'Vaughn College', logo: null },
+  { name: 'Designs for Vision', logo: null },
   { name: 'Dyson', logo: null },
-  { name: 'Phoenix Mills', logo: phoenixMillsLogo },
   { name: 'Pixelfox', logo: pixelfoxLogo },
-  { name: 'House of Hiranandani', logo: houseOfHiranandaniLogo },
   { name: 'Energy Mission Machineries', logo: energyMissionLogo },
 ];
 
 const work = [
-  { title: 'HOH Cyclothon Campaign', tag: 'Campaign Strategy', result: 'End to end creative strategy driving city wide event visibility and turnout' },
+  { title: 'Jovia Financial Credit Union', tag: 'Competitive Social Audit', result: 'Cross-platform Brandwatch audit of 8 competitor brands, tied to a 29% increase in total interactions' },
+  { title: 'Molloy University', tag: 'Audience Profiling', result: 'MRI-Simmons Catalyst profiling drove a 16% lift in social engagement' },
   { title: 'Dyson India Localization', tag: 'Global Localization', result: "Adapted Dyson's global campaign for the Indian market while staying on brand" },
-  { title: 'Rakshabandhan x Phoenix Gift Card', tag: 'Revenue Generation', result: '₹8L+ in revenue through emotional storytelling and targeted promotions' },
 ];
 
 const experienceSnapshot = [
@@ -67,11 +65,19 @@ export default function LandingPage() {
           transition={{ duration: 0.5 }}
         >
           <div className="px-4 py-2 bg-[#1A2A1A]/60 border border-[#1DB954]/20 rounded-full backdrop-blur-sm">
-            <p className="text-xs text-[#1DB954]/80 font-medium tracking-wide">Spotify UI-inspired Design</p>
+            <p className="text-xs text-[#1DB954]/80 font-medium tracking-wide">Marketing Strategist Portfolio</p>
           </div>
         </motion.div>
 
         <div className="text-center mb-10">
+          <motion.img
+            src={profileImage}
+            alt="Malav Akhani"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover mx-auto mb-5 ring-2 ring-[#1DB954]/50"
+          />
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -84,9 +90,18 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg md:text-xl text-[#1DB954] font-medium mb-8"
+            className="text-lg md:text-xl text-[#1DB954] font-medium mb-3"
           >
             MARKETING STRATEGIST | MBA MARKETING STUDENT
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="text-[#B3B3B3] max-w-xl mx-auto mb-8"
+          >
+            I plan and run marketing campaigns, social, paid, and brand work, for companies
+            ranging from financial services to higher education to consumer brands.
           </motion.p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-8">

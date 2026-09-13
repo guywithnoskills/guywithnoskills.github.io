@@ -16,12 +16,20 @@ import { useMusic } from '../components/MusicContext';
 
 const projects = [
   {
-    id: 'hoh-cyclothon',
-    title: 'HOH Cyclothon Campaign',
-    description: "Led end-to-end creative strategy from ideation to execution, focusing on high-impact visibility and engagement. Developed facade assets and social media creatives aligned with the campaign's energetic spirit.",
-    details: 'Strategically defined target audience (fitness enthusiasts, families, socially-conscious urban youth) and crafted inclusive, inspiring messaging. Used vibrant, positive tonality with bold typography and dynamic imagery.',
-    videoUrl: 'https://www.youtube.com/watch?v=cNWMhQiyR4o',
-    category: 'Campaign Strategy'
+    id: 'jovia-audit',
+    title: 'Jovia Financial Credit Union',
+    description: 'Ran a cross-platform competitive social audit across Instagram, Facebook, LinkedIn, TikTok, and X for a financial services client at The EGC Group.',
+    details: 'Benchmarked eight competitor brands in Brandwatch, informing a content strategy shift tied to a 29% increase in total interactions.',
+    videoUrl: null,
+    category: 'Competitive Social Audit'
+  },
+  {
+    id: 'molloy-profiling',
+    title: 'Molloy University',
+    description: 'Built organic social audience and content recommendations for a higher-ed client using MRI-Simmons Catalyst profiling.',
+    details: 'Contributed to a 16% lift in social engagement and improved campaign conversion rates.',
+    videoUrl: null,
+    category: 'Audience Profiling'
   },
   {
     id: 'dyson-campaign',
@@ -32,12 +40,12 @@ const projects = [
     category: 'Global Localization'
   },
   {
-    id: 'phoenix-gift-card',
-    title: 'Rakshabandhan x Phoenix Gift Card',
-    description: 'Celebrated sibling bonds through market research and emotional insights. Positioned PGC as the perfect gifting solution with engaging storytelling and targeted promotions.',
-    details: 'Campaign generated ₹8L+ in revenue through emotional storytelling that blended sentiment with versatility, using engaging visuals and strategic promotional hooks.',
-    videoUrl: 'https://www.youtube.com/watch?v=TJpY0mozxlc',
-    category: 'Revenue Generation'
+    id: 'designs-for-vision',
+    title: 'Designs for Vision',
+    description: 'Ran identification, outreach, briefing, and deliverable planning for 15 dental creators as part of an emerging creator and community marketing program.',
+    details: 'Contributed to a 57% increase in profile visits for the program.',
+    videoUrl: null,
+    category: 'Creator Marketing'
   }
 ];
 
@@ -163,20 +171,24 @@ export default function WorkfolioPage() {
                         <p className="text-[#B3B3B3] mb-3">{project.description}</p>
                         <p className="text-[#B3B3B3] text-sm">{project.details}</p>
                       </div>
+                      {project.videoUrl && (
+                        <button
+                          onClick={() => window.open(project.videoUrl, '_blank')}
+                          className="ml-4 bg-[#1DB954] hover:bg-[#1ed760] text-black p-3 rounded-full transition-all duration-300 hover:scale-110 btn-glow-green"
+                        >
+                          <PlayCircle size={20} />
+                        </button>
+                      )}
+                    </div>
+                    {project.videoUrl && (
                       <button
                         onClick={() => window.open(project.videoUrl, '_blank')}
-                        className="ml-4 bg-[#1DB954] hover:bg-[#1ed760] text-black p-3 rounded-full transition-all duration-300 hover:scale-110 btn-glow-green"
+                        className="w-full bg-[#1DB954]/10 hover:bg-[#1DB954]/20 border border-[#1DB954]/30 text-[#1DB954] font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
                       >
-                        <PlayCircle size={20} />
+                        <PlayCircle size={16} />
+                        Watch Campaign Video
                       </button>
-                    </div>
-                    <button
-                      onClick={() => window.open(project.videoUrl, '_blank')}
-                      className="w-full bg-[#1DB954]/10 hover:bg-[#1DB954]/20 border border-[#1DB954]/30 text-[#1DB954] font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
-                    >
-                      <PlayCircle size={16} />
-                      Watch Campaign Video
-                    </button>
+                    )}
                   </div>
                 ))}
               </div>

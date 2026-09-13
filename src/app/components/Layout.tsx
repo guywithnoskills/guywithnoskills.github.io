@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { Volume2, VolumeX, Volume1, Settings, Menu, X } from 'lucide-react';
+import { Volume2, VolumeX, Volume1, Settings, Menu, X, User, FolderOpen, FileText, Mail } from 'lucide-react';
 import { useMusic } from './MusicContext';
 import { Play, Pause, SkipForward } from 'lucide-react';
 
@@ -9,10 +9,10 @@ interface LayoutProps {
 }
 
 const NAV_LINKS = [
-  { label: 'About', path: '/about' },
-  { label: 'Work', path: '/workfolio' },
-  { label: 'Resume', path: '/resume' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'About', path: '/about', icon: User },
+  { label: 'Work', path: '/workfolio', icon: FolderOpen },
+  { label: 'Resume', path: '/resume', icon: FileText },
+  { label: 'Contact', path: '/contact', icon: Mail },
 ];
 
 export default function Layout({ children }: LayoutProps) {
@@ -71,7 +71,7 @@ export default function Layout({ children }: LayoutProps) {
               }`}
             ></div>
             <span className="text-white text-sm md:text-lg font-medium">
-              Spotify UI Inspired Portfolio
+              Malav's Portfolio
             </span>
           </button>
 
@@ -260,39 +260,50 @@ export default function Layout({ children }: LayoutProps) {
           </div>
         </div>
 
-        <div className="hidden md:flex items-center justify-center gap-8 h-11 bg-[#181818] border-t border-[#282828]">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`text-sm font-medium transition-colors duration-200 ${
-                isActive(link.path) ? 'text-[#1DB954]' : 'text-[#B3B3B3] hover:text-white'
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <div className="hidden md:flex items-center justify-center gap-2 h-12 bg-[#181818] border-t border-[#282828]">
+          {NAV_LINKS.map((link) => {
+            const Icon = link.icon;
+            const active = isActive(link.path);
+            return (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`flex items-center gap-2 px-4 h-full text-sm font-medium border-b-2 transition-colors duration-200 ${
+                  active
+                    ? 'text-[#1DB954] border-[#1DB954]'
+                    : 'text-[#B3B3B3] border-transparent hover:text-white hover:border-[#404040]'
+                }`}
+              >
+                <Icon size={15} />
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
 
         {mobileNavOpen && (
           <div className="md:hidden bg-[#181818] border-t border-[#282828] px-4 py-3 flex flex-col gap-1">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setMobileNavOpen(false)}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                  isActive(link.path) ? 'text-[#1DB954] bg-[#1DB954]/10' : 'text-[#B3B3B3] hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setMobileNavOpen(false)}
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                    isActive(link.path) ? 'text-[#1DB954] bg-[#1DB954]/10' : 'text-[#B3B3B3] hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <Icon size={16} />
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
         )}
       </div>
 
-      <div className="pt-[60px] md:pt-[104px]">{children}</div>
+      <div className="pt-[60px] md:pt-[108px]">{children}</div>
 
       <footer className="bg-[#181818] border-t border-[#282828] py-8 px-6">
         <div className="max-w-6xl mx-auto">

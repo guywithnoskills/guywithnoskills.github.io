@@ -114,7 +114,7 @@ export default function ResumePage() {
   return (
     <div className="bg-green-gradient min-h-[calc(100vh-60px)]">
       <div className="max-w-3xl mx-auto px-4 md:px-8 py-10">
-        <div className="sticky top-16 z-10 bg-[#0D1F0D]/95 backdrop-blur-sm py-6 flex items-center justify-between border-b border-[#1DB954]/20 mb-10">
+        <div className="sticky top-[60px] md:top-[108px] z-10 bg-[#0D1F0D]/95 backdrop-blur-sm py-6 flex items-center justify-between border-b border-[#1DB954]/20 mb-10">
           <h1 className="text-3xl md:text-4xl font-bold text-white">Resume</h1>
           <a
             href={RESUME_FILE}

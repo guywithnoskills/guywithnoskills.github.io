@@ -2,11 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import profileImage from '../../assets/profile.webp';
 import pixelfoxLogo from 'figma:asset/c43cf05a710c189a3942d6e9d546839c52216c3c.png';
-import phoenixMillsLogo from 'figma:asset/b99caa44dc87ef7901e8c23bce701518f14df6ff.png';
-import houseOfHiranandaniLogo from 'figma:asset/dba27f58310e1259b05805d98beda4da7e845b60.png';
 import energyMissionLogo from 'figma:asset/5b9b71543399cf1011dd8138f18e9c76a8ec3219.png';
-import amazonPrimeLogo from 'figma:asset/00d3e2ec7a983bfe7d4973b47f787f6286416e66.png';
-import godrejLogo from 'figma:asset/b9392f9a019a1070f0fa70ddbead601f0e6ae455.png';
 
 const skillGroups = [
   { label: 'Strategy & Insights', items: ['Brand Strategy', 'Integrated Marketing', 'Consumer Insights', 'Audience Segmentation', 'Competitive Intelligence', 'Social Listening', 'Go-to-Market Strategy'] },
@@ -15,12 +11,14 @@ const skillGroups = [
 ];
 
 const brands = [
-  { name: 'Amazon Prime Video', logo: amazonPrimeLogo },
-  { name: 'Godrej', logo: godrejLogo },
+  { name: 'The EGC Group', logo: null },
+  { name: 'Jovia Financial Credit Union', logo: null },
+  { name: 'Molloy University', logo: null },
+  { name: "Jake's 58 Casino Hotel", logo: null },
+  { name: 'Vaughn College', logo: null },
+  { name: 'Designs for Vision', logo: null },
   { name: 'Dyson', logo: null },
-  { name: 'Phoenix Mills', logo: phoenixMillsLogo },
   { name: 'Pixelfox', logo: pixelfoxLogo },
-  { name: 'House of Hiranandani', logo: houseOfHiranandaniLogo },
   { name: 'Energy Mission Machineries', logo: energyMissionLogo },
 ];
 
