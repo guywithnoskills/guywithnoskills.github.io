@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -42,17 +42,18 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   
-  /* Portfolio colors: warm paper + single ink accent */
-  --portfolio-bg: #F7F3EC;
-  --portfolio-secondary-bg: #EFE9DD;
-  --portfolio-card-bg: #FFFFFF;
-  --portfolio-text: #211D18;
-  --portfolio-text-muted: #6E6255;
-  --portfolio-accent: #B3452A;
-  --portfolio-accent-hover: #96381F;
-  --portfolio-border: #E4DCCC;
-  --font-serif: 'Fraunces', serif;
-  --font-sans: 'Archivo', sans-serif;
+  /* Enhanced Portfolio colors with more green */
+  --portfolio-bg: #0D1F0D;
+  --portfolio-secondary-bg: #141B14;
+  --portfolio-card-bg: #1A2A1A;
+  --portfolio-text: #FFFFFF;
+  --portfolio-text-muted: #B3B3B3;
+  --portfolio-accent: #1DB954;
+  --portfolio-accent-hover: #1ED760;
+  --portfolio-accent-secondary: #2ECC71;
+  --portfolio-green-dark: #0F4C1C;
+  --portfolio-green-medium: #176B2F;
+  --portfolio-green-light: #27AE60;
 }
 
 .dark {
@@ -153,12 +154,8 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
-  }
-
-  h1, h2, h3, h4 {
-    font-family: var(--font-serif), serif;
   }
 
   ::-webkit-scrollbar {
@@ -167,16 +164,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #EFE9DD;
+    background: #0D1F0D;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #C9BFA8;
+    background: #176B2F;
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #B3452A;
+    background: #1DB954;
   }
 }
 

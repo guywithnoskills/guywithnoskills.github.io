@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
+import { MusicProvider } from './components/MusicContext';
 import Layout from './components/Layout';
 import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
@@ -94,10 +95,12 @@ const AnimatedRoutes = () => {
 
 export default function App() {
   return (
-    <Router>
-      <Layout>
-        <AnimatedRoutes />
-      </Layout>
-    </Router>
+    <MusicProvider>
+      <Router>
+        <Layout>
+          <AnimatedRoutes />
+        </Layout>
+      </Router>
+    </MusicProvider>
   );
 }

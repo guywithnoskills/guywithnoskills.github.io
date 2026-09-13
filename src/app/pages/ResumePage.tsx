@@ -71,7 +71,7 @@ const education = [
   },
 ];
 
-function TimelineEntry({ item, index }: { item: (typeof experiences)[number]; index: number }) {
+function TimelineEntry({ item }: { item: (typeof experiences)[number] }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -80,24 +80,21 @@ function TimelineEntry({ item, index }: { item: (typeof experiences)[number]; in
       transition={{ duration: 0.4, ease: 'easeOut' }}
       className="relative pl-10 md:pl-14 pb-12 last:pb-0"
     >
-      <span className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#B3452A] ring-4 ring-[#F7F3EC]" />
-      <p className="text-sm text-[#6E6255] mb-1">{item.period}</p>
-      <h3 className="font-serif text-xl md:text-2xl text-[#211D18] mb-0.5">{item.title}</h3>
-      <p className="text-[#B3452A] text-sm font-medium mb-3">{item.company}</p>
+      <span className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#1DB954] ring-4 ring-[#121212]" />
+      <p className="text-sm text-[#B3B3B3] mb-1">{item.period}</p>
+      <h3 className="text-xl md:text-2xl font-bold text-white mb-0.5">{item.title}</h3>
+      <p className="text-[#1DB954] text-sm font-medium mb-3">{item.company}</p>
       <ul className="space-y-2 mb-3">
         {item.achievements.map((a, i) => (
-          <li key={i} className="text-[#4A4339] text-sm leading-relaxed pl-4 relative">
-            <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-[#B3452A]/60" />
+          <li key={i} className="text-[#B3B3B3] text-sm leading-relaxed pl-4 relative">
+            <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-[#1DB954]/60" />
             {a}
           </li>
         ))}
       </ul>
       <div className="flex flex-wrap gap-2">
         {item.tags.map((tag) => (
-          <span
-            key={tag}
-            className="text-xs px-2.5 py-1 rounded-full border border-[#E4DCCC] text-[#6E6255]"
-          >
+          <span key={tag} className="text-xs px-2.5 py-1 rounded-full border border-[#1DB954]/30 text-[#B3B3B3]">
             {tag}
           </span>
         ))}
@@ -115,57 +112,59 @@ export default function ResumePage() {
   const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <div className="max-w-3xl mx-auto px-4 md:px-8">
-      <div className="sticky top-16 z-10 bg-[#F7F3EC]/95 backdrop-blur-sm py-6 flex items-center justify-between border-b border-[#E4DCCC] mb-10">
-        <h1 className="font-serif text-3xl md:text-4xl text-[#211D18]">Resume</h1>
-        <a
-          href={RESUME_FILE}
-          download
-          className="inline-flex items-center gap-2 px-4 py-2 border border-[#211D18] rounded-full text-sm text-[#211D18] hover:bg-[#211D18] hover:text-[#F7F3EC] transition-colors"
-        >
-          <Download size={16} />
-          <span className="hidden sm:inline">Download</span> PDF
-        </a>
-      </div>
+    <div className="bg-green-gradient min-h-[calc(100vh-60px)]">
+      <div className="max-w-3xl mx-auto px-4 md:px-8 py-10">
+        <div className="sticky top-16 z-10 bg-[#0D1F0D]/95 backdrop-blur-sm py-6 flex items-center justify-between border-b border-[#1DB954]/20 mb-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-white">Resume</h1>
+          <a
+            href={RESUME_FILE}
+            download
+            className="inline-flex items-center gap-2 px-4 py-2 border border-[#1DB954] rounded-full text-sm text-[#1DB954] hover:bg-[#1DB954] hover:text-black transition-colors"
+          >
+            <Download size={16} />
+            <span className="hidden sm:inline">Download</span> PDF
+          </a>
+        </div>
 
-      <p className="text-[#6E6255] mb-10 max-w-xl">
-        Five-plus years across U.S. agency and India-based marketing roles — brand, social,
-        influencer, and integrated strategy for clients from financial services to entertainment.
-      </p>
+        <p className="text-[#B3B3B3] mb-10 max-w-xl">
+          Five-plus years across U.S. agency and India-based marketing roles, spanning brand, social,
+          influencer, and integrated strategy for clients from financial services to entertainment.
+        </p>
 
-      <div ref={timelineRef} className="relative">
-        <div className="absolute left-[5px] top-1.5 bottom-0 w-px bg-[#E4DCCC]" />
-        <motion.div
-          style={{ scaleY: lineScale }}
-          className="absolute left-[5px] top-1.5 bottom-0 w-px bg-[#B3452A] origin-top"
-        />
-        {experiences.map((item, i) => (
-          <TimelineEntry key={item.company} item={item} index={i} />
-        ))}
-      </div>
-
-      <div className="border-t border-[#E4DCCC] mt-4 pt-10 pb-16">
-        <h2 className="font-serif text-2xl text-[#211D18] mb-6">Education</h2>
-        <div className="space-y-6">
-          {education.map((ed) => (
-            <div key={ed.degree} className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-              <div>
-                <p className="text-[#211D18] font-medium">{ed.degree}</p>
-                <p className="text-sm text-[#6E6255]">{ed.institution}</p>
-              </div>
-              <p className="text-sm text-[#6E6255] whitespace-nowrap">{ed.period}</p>
-            </div>
+        <div ref={timelineRef} className="relative">
+          <div className="absolute left-[5px] top-1.5 bottom-0 w-px bg-[#282828]" />
+          <motion.div
+            style={{ scaleY: lineScale }}
+            className="absolute left-[5px] top-1.5 bottom-0 w-px bg-[#1DB954] origin-top"
+          />
+          {experiences.map((item) => (
+            <TimelineEntry key={item.company} item={item} />
           ))}
         </div>
 
-        <a
-          href={RESUME_FILE}
-          download
-          className="inline-flex items-center gap-2 mt-10 px-5 py-2.5 bg-[#B3452A] text-white rounded-full text-sm hover:bg-[#96381F] transition-colors"
-        >
-          <Download size={16} />
-          Download Full Résumé (PDF)
-        </a>
+        <div className="border-t border-[#282828] mt-4 pt-10 pb-16">
+          <h2 className="text-2xl font-bold text-white mb-6">Education</h2>
+          <div className="space-y-6">
+            {education.map((ed) => (
+              <div key={ed.degree} className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                <div>
+                  <p className="text-white font-medium">{ed.degree}</p>
+                  <p className="text-sm text-[#B3B3B3]">{ed.institution}</p>
+                </div>
+                <p className="text-sm text-[#B3B3B3] whitespace-nowrap">{ed.period}</p>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href={RESUME_FILE}
+            download
+            className="inline-flex items-center gap-2 mt-10 px-5 py-2.5 bg-[#1DB954] hover:bg-[#1ed760] text-black font-medium rounded-full text-sm transition-colors"
+          >
+            <Download size={16} />
+            Download Full Resume (PDF)
+          </a>
+        </div>
       </div>
     </div>
   );
