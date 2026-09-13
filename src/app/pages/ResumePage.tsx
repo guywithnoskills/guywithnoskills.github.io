@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'motion/react';
+import React from 'react';
+import { motion } from 'motion/react';
 import { Download } from 'lucide-react';
 
 const RESUME_FILE = `${import.meta.env.BASE_URL}Malav-Akhani-Resume.pdf`;
@@ -71,49 +71,80 @@ const education = [
   },
 ];
 
-function TimelineEntry({ item }: { item: (typeof experiences)[number] }) {
+function EntryCard({ item, align }: { item: (typeof experiences)[number]; align: 'left' | 'right' }) {
+  const alignClass = align === 'left' ? 'md:text-right' : 'md:text-left';
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="relative pl-10 md:pl-14 pb-12 last:pb-0"
-    >
-      <span className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#1DB954] ring-4 ring-[#121212]" />
+    <div className={alignClass}>
       <p className="text-sm text-[#B3B3B3] mb-1">{item.period}</p>
       <h3 className="text-xl md:text-2xl font-bold text-white mb-0.5">{item.title}</h3>
       <p className="text-[#1DB954] text-sm font-medium mb-3">{item.company}</p>
       <ul className="space-y-2 mb-3">
         {item.achievements.map((a, i) => (
-          <li key={i} className="text-[#B3B3B3] text-sm leading-relaxed pl-4 relative">
-            <span className="absolute left-0 top-2 w-1 h-1 rounded-full bg-[#1DB954]/60" />
+          <li
+            key={i}
+            className={`text-[#B3B3B3] text-sm leading-relaxed relative pl-4 ${
+              align === 'left' ? 'md:pl-0 md:pr-4' : ''
+            }`}
+          >
+            <span
+              className={`absolute top-2 w-1 h-1 rounded-full bg-[#1DB954]/60 left-0 ${
+                align === 'left' ? 'md:left-auto md:right-0' : ''
+              }`}
+            />
             {a}
           </li>
         ))}
       </ul>
-      <div className="flex flex-wrap gap-2">
+      <div className={`flex flex-wrap gap-2 ${align === 'left' ? 'md:justify-end' : ''}`}>
         {item.tags.map((tag) => (
           <span key={tag} className="text-xs px-2.5 py-1 rounded-full border border-[#1DB954]/30 text-[#B3B3B3]">
             {tag}
           </span>
         ))}
       </div>
-    </motion.div>
+    </div>
+  );
+}
+
+function TimelineEntry({ item, index }: { item: (typeof experiences)[number]; index: number }) {
+  const isLeft = index % 2 === 0;
+  return (
+    <div
+      className={`relative flex flex-col md:flex-row items-start gap-4 md:gap-8 mb-14 md:mb-20 last:mb-0 ${
+        isLeft ? '' : 'md:flex-row-reverse'
+      }`}
+    >
+      <motion.div
+        initial={{ opacity: 0, x: isLeft ? -50 : 50, scale: 0.95 }}
+        whileInView={{ opacity: 1, x: 0, scale: 1 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className="w-full md:w-[calc(50%-2rem)]"
+      >
+        <EntryCard item={item} align={isLeft ? 'left' : 'right'} />
+      </motion.div>
+
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.3, delay: 0.15 }}
+        className="hidden md:flex flex-shrink-0 w-4 items-start justify-center pt-1.5"
+      >
+        <span className="w-4 h-4 rounded-full bg-[#1DB954] ring-4 ring-[#121212] z-10" />
+      </motion.div>
+
+      <div className="hidden md:block w-[calc(50%-2rem)]" />
+
+      <span className="md:hidden absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#1DB954] ring-4 ring-[#121212]" />
+    </div>
   );
 }
 
 export default function ResumePage() {
-  const timelineRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: timelineRef,
-    offset: ['start 0.2', 'end 0.8'],
-  });
-  const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
-
   return (
     <div className="bg-green-gradient min-h-[calc(100vh-60px)]">
-      <div className="max-w-3xl mx-auto px-4 md:px-8 py-10">
+      <div className="max-w-4xl mx-auto px-4 md:px-8 py-10">
         <div className="sticky top-[60px] md:top-[108px] z-10 bg-[#0D1F0D]/95 backdrop-blur-sm py-6 flex items-center justify-between border-b border-[#1DB954]/20 mb-10">
           <h1 className="text-3xl md:text-4xl font-bold text-white">Resume</h1>
           <a
@@ -126,19 +157,15 @@ export default function ResumePage() {
           </a>
         </div>
 
-        <p className="text-[#B3B3B3] mb-10 max-w-xl">
+        <p className="text-[#B3B3B3] mb-14 max-w-xl">
           Five-plus years across U.S. agency and India-based marketing roles, spanning brand, social,
           influencer, and integrated strategy for clients from financial services to entertainment.
         </p>
 
-        <div ref={timelineRef} className="relative">
-          <div className="absolute left-[5px] top-1.5 bottom-0 w-px bg-[#282828]" />
-          <motion.div
-            style={{ scaleY: lineScale }}
-            className="absolute left-[5px] top-1.5 bottom-0 w-px bg-[#1DB954] origin-top"
-          />
-          {experiences.map((item) => (
-            <TimelineEntry key={item.company} item={item} />
+        <div className="relative pl-8 md:pl-0">
+          <div className="absolute left-[5px] md:left-1/2 md:-translate-x-1/2 top-1.5 bottom-8 w-px bg-[#282828]" />
+          {experiences.map((item, i) => (
+            <TimelineEntry key={item.company} item={item} index={i} />
           ))}
         </div>
 

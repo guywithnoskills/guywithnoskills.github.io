@@ -17,7 +17,6 @@ const stats = [
   { label: 'Years Experience', value: '5+' },
   { label: 'Clients Handled', value: '80+' },
   { label: 'Projects Delivered', value: '100+' },
-  { label: 'Brands Worked With', value: '50+' },
 ];
 
 const brands = [
@@ -32,8 +31,8 @@ const brands = [
 ];
 
 const work = [
-  { title: 'Jovia Financial Credit Union', tag: 'Competitive Social Audit', result: 'Cross-platform Brandwatch audit of 8 competitor brands, tied to a 29% increase in total interactions' },
-  { title: 'Molloy University', tag: 'Audience Profiling', result: 'MRI-Simmons Catalyst profiling drove a 16% lift in social engagement' },
+  { title: 'Social Media Listening Report', tag: 'Jovia Financial Credit Union', result: "An 8x jump in mentions and 14x surge in reach for Jovia's Long Island Marathon sponsorship, tracked week over week" },
+  { title: 'Nursing Brand Persona', tag: 'Molloy University', result: 'Built a data-driven prospect persona from MRI-Simmons national survey data to guide nursing recruitment messaging' },
   { title: 'Dyson India Localization', tag: 'Global Localization', result: "Adapted Dyson's global campaign for the Indian market while staying on brand" },
 ];
 
@@ -109,7 +108,7 @@ export default function LandingPage() {
             ranging from financial services to higher education to consumer brands.
           </motion.p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-8">
+          <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto mb-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <motion.div

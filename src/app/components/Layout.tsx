@@ -61,7 +61,15 @@ export default function Layout({ children }: LayoutProps) {
   }, [mobileVolumeOpen]);
 
   return (
-    <div className="min-h-screen bg-[#121212]">
+    <div className="min-h-screen bg-[#121212] relative">
+      <div
+        className="ambient-orb"
+        style={{ top: '5%', left: '-5%', width: '380px', height: '380px', background: 'radial-gradient(circle, rgba(29,185,84,0.18), transparent 70%)' }}
+      />
+      <div
+        className="ambient-orb"
+        style={{ bottom: '10%', right: '-8%', width: '420px', height: '420px', background: 'radial-gradient(circle, rgba(46,204,113,0.14), transparent 70%)', animationDelay: '-8s' }}
+      />
       <div className="fixed top-0 left-0 right-0 z-50 bg-[#121212] border-b border-[#1DB954]">
         <div className="h-[60px] flex items-center justify-between px-4 md:px-6">
           <button onClick={handleLogoClick} className="flex items-center gap-3 text-left">
@@ -303,9 +311,9 @@ export default function Layout({ children }: LayoutProps) {
         )}
       </div>
 
-      <div className="pt-[60px] md:pt-[108px]">{children}</div>
+      <div className="relative z-[1] pt-[60px] md:pt-[108px]">{children}</div>
 
-      <footer className="bg-[#181818] border-t border-[#282828] py-8 px-6">
+      <footer className="relative z-[1] bg-[#181818] border-t border-[#282828] py-8 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
             <div>

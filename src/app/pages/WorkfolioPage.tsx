@@ -10,26 +10,31 @@ import {
   ExternalLink,
   FolderOpen,
   PlayCircle,
-  Images
+  Images,
+  Download
 } from 'lucide-react';
 import { useMusic } from '../components/MusicContext';
 
 const projects = [
   {
-    id: 'jovia-audit',
-    title: 'Jovia Financial Credit Union',
-    description: 'Ran a cross-platform competitive social audit across Instagram, Facebook, LinkedIn, TikTok, and X for a financial services client at The EGC Group.',
-    details: 'Benchmarked eight competitor brands in Brandwatch, informing a content strategy shift tied to a 29% increase in total interactions.',
+    id: 'jovia-listening',
+    title: 'Social Media Listening Report',
+    description: "Built a social listening report for Jovia Financial Credit Union's Long Island Marathon sponsorship, tracking mentions, reach, sentiment, and platform mix across the sponsorship week.",
+    details: 'Mentions jumped 8x and reach surged 14x week over week, with a presence score of 14 putting Jovia ahead of 46% of tracked brands. Facebook led, with TikTok and Instagram close behind.',
     videoUrl: null,
-    category: 'Competitive Social Audit'
+    attachmentUrl: `${import.meta.env.BASE_URL}Jovia-Marathon-Social-Listening-Report.pdf`,
+    attachmentLabel: 'View full report (PDF)',
+    category: 'Social Media Listening'
   },
   {
-    id: 'molloy-profiling',
-    title: 'Molloy University',
-    description: 'Built organic social audience and content recommendations for a higher-ed client using MRI-Simmons Catalyst profiling.',
-    details: 'Contributed to a 16% lift in social engagement and improved campaign conversion rates.',
+    id: 'molloy-persona',
+    title: 'Nursing Brand Persona',
+    description: "Built a data-driven brand persona for Molloy's nursing and allied health prospect using MRI-Simmons 2026 Spring Doublebase survey data.",
+    details: "Surfaced a core tension between high ambition (63% call it a career, not a job) and real financial strain, shaping messaging around cost, peer proof, and platforms like TikTok and Snapchat.",
     videoUrl: null,
-    category: 'Audience Profiling'
+    attachmentUrl: `${import.meta.env.BASE_URL}Molloy-Nursing-Brand-Persona.xlsx`,
+    attachmentLabel: 'Download analysis (XLSX)',
+    category: 'Brand Persona · MRI-Simmons'
   },
   {
     id: 'dyson-campaign',
@@ -188,6 +193,16 @@ export default function WorkfolioPage() {
                         <PlayCircle size={16} />
                         Watch Campaign Video
                       </button>
+                    )}
+                    {project.attachmentUrl && (
+                      <a
+                        href={project.attachmentUrl}
+                        download
+                        className="w-full bg-[#1DB954]/10 hover:bg-[#1DB954]/20 border border-[#1DB954]/30 text-[#1DB954] font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+                      >
+                        <Download size={16} />
+                        {project.attachmentLabel}
+                      </a>
                     )}
                   </div>
                 ))}

@@ -627,6 +627,29 @@ button:focus-visible, [role="button"]:focus-visible {
 /* Special gradient backgrounds */
 .bg-green-gradient {
   background: linear-gradient(135deg, #0D1F0D 0%, #141B14 50%, #1A2A1A 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 18s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.08); }
+  66% { transform: translate(-25px, 25px) scale(0.95); }
+}
+
+.ambient-orb {
+  position: fixed;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  animation: floatOrb 22s ease-in-out infinite;
 }
 
 .bg-green-gradient-light {
