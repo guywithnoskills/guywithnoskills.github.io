@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import profileImage from '../../assets/profile.webp';
-import pixelfoxLogo from 'figma:asset/c43cf05a710c189a3942d6e9d546839c52216c3c.png';
 import energyMissionLogo from 'figma:asset/5b9b71543399cf1011dd8138f18e9c76a8ec3219.png';
 import jakes58Logo from '../../assets/client-jakes58.webp';
 import joviaLogo from '../../assets/client-jovia.webp';
-import vaughnLogo from '../../assets/client-vaughn.webp';
 import dfvLogo from '../../assets/client-dfv.webp';
 import egcLogo from '../../assets/client-egc.webp';
 import molloyLogo from '../../assets/client-molloy.webp';
+import nikeLogo from '../../assets/client-nike.png';
+import dysonLogo from '../../assets/client-dyson.svg';
 
 const skillGroups = [
   { label: 'Strategy & Insights', items: ['Brand Strategy', 'Integrated Marketing', 'Consumer Insights', 'Audience Segmentation', 'Competitive Intelligence', 'Social Listening', 'Go-to-Market Strategy'] },
@@ -21,10 +21,9 @@ const brands = [
   { name: 'Jovia Financial Credit Union', logo: joviaLogo },
   { name: 'Molloy University', logo: molloyLogo },
   { name: "Jake's 58 Casino Hotel", logo: jakes58Logo },
-  { name: 'Vaughn College', logo: vaughnLogo },
+  { name: 'Nike', logo: nikeLogo },
   { name: 'Designs for Vision', logo: dfvLogo },
-  { name: 'Dyson', logo: null },
-  { name: 'Pixelfox', logo: pixelfoxLogo },
+  { name: 'Dyson', logo: dysonLogo },
   { name: 'Energy Mission Machineries', logo: energyMissionLogo },
 ];
 
