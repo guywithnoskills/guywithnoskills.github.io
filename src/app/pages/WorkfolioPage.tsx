@@ -15,11 +15,17 @@ import {
 } from 'lucide-react';
 import { useMusic } from '../components/MusicContext';
 import { JoviaPerformance, Jakes58Performance } from '../components/CaseStudyCharts';
+import jakes58Logo from '../../assets/client-jakes58.webp';
+import joviaLogo from '../../assets/client-jovia.webp';
+import dfvLogo from '../../assets/client-dfv.webp';
+import molloyLogo from '../../assets/client-molloy.webp';
+import dysonLogo from '../../assets/client-dyson.svg';
 
 const projects = [
   {
     id: 'jovia-listening',
     title: 'Social Media Listening Report',
+    brand: { name: 'Jovia Financial Credit Union', logo: joviaLogo },
     description: "Built a social listening report for Jovia Financial Credit Union's Long Island Marathon sponsorship, tracking mentions, reach, sentiment, and platform mix across the sponsorship week.",
     details: 'Mentions jumped 8x and reach surged 14x week over week, with a presence score of 14 putting Jovia ahead of 46% of tracked brands. Facebook led, with TikTok and Instagram close behind.',
     videoUrl: null,
@@ -31,6 +37,7 @@ const projects = [
   {
     id: 'jakes58-performance',
     title: "Jake's 58 Casino Hotel",
+    brand: { name: "Jake's 58 Casino Hotel", logo: jakes58Logo },
     description: 'Manage organic content and community across Instagram and Facebook for Jake\'s 58, tracking views, follower quality, and content-type performance to guide what gets made next.',
     details: 'Facebook views grew 27.6% and net follows grew 487.5% period over period, while Instagram posts and reels drove the bulk of reach.',
     videoUrl: null,
@@ -40,6 +47,7 @@ const projects = [
   {
     id: 'molloy-persona',
     title: 'Nursing Brand Persona',
+    brand: { name: 'Molloy University', logo: molloyLogo },
     description: "Built a data-driven brand persona for Molloy's nursing and allied health prospect using MRI-Simmons 2026 Spring Doublebase survey data.",
     details: "Surfaced a core tension between high ambition (63% call it a career, not a job) and real financial strain, shaping messaging around cost, peer proof, and platforms like TikTok and Snapchat.",
     videoUrl: null,
@@ -50,6 +58,7 @@ const projects = [
   {
     id: 'dyson-campaign',
     title: 'Dyson India Localization',
+    brand: { name: 'Dyson', logo: dysonLogo },
     description: "Collaborated with Dyson's global team to localize a high-impact campaign for the Indian market. Adapted brand messaging and visual storytelling to resonate with Indian audiences.",
     details: "Played key role from brainstorming to execution, ensuring campaign stayed true to Dyson's global standards while capturing local attention through strategic positioning and culturally relevant communication.",
     videoUrl: 'https://www.youtube.com/watch?v=EdZYyoqlktg',
@@ -58,6 +67,7 @@ const projects = [
   {
     id: 'designs-for-vision',
     title: 'Designs for Vision',
+    brand: { name: 'Designs for Vision', logo: dfvLogo },
     description: 'Ran identification, outreach, briefing, and deliverable planning for 15 dental creators as part of an emerging creator and community marketing program.',
     details: 'Contributed to a 57% increase in profile visits for the program.',
     videoUrl: null,
@@ -133,6 +143,15 @@ export default function WorkfolioPage() {
               <div className="space-y-6">
                 {projects.map((project) => (
                   <div key={project.id} className="bg-[#2a2a2a] rounded-lg p-6 hover:bg-[#333333] transition-all duration-300 group">
+                    <div className="flex items-center gap-3 pb-4 mb-4 border-b border-white/10">
+                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
+                        <img src={project.brand.logo} alt={project.brand.name} className="w-7 h-7 object-contain" />
+                      </div>
+                      <div>
+                        <p className="text-[10px] uppercase tracking-wide text-[#B3B3B3]">Client</p>
+                        <p className="text-sm font-semibold text-white">{project.brand.name}</p>
+                      </div>
+                    </div>
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">

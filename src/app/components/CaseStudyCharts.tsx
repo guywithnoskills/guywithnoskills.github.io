@@ -3,8 +3,8 @@ import { DivergingBarChart, DonutChart, StatChips } from './Charts';
 
 export function JoviaPerformance() {
   return (
-    <div className="mt-5 pt-5 border-t border-[#333]">
-      <p className="text-xs text-[#6E6255] uppercase tracking-wide mb-4">
+    <div className="mt-5 pt-5 border-t border-[#333] space-y-4">
+      <p className="text-xs text-[#B3B3B3] uppercase tracking-wide">
         Cross-network performance · Sep 1–13, 2026 vs. prior year
       </p>
       <DivergingBarChart
@@ -16,7 +16,7 @@ export function JoviaPerformance() {
           { label: 'Engagement Rate', value: '0.8%', change: -77.4 },
         ]}
       />
-      <p className="text-xs text-[#6E6255] mt-4">
+      <p className="text-xs text-[#B3B3B3]">
         Built creative in Canva, tracked competitor and sentiment signal in Brandwatch, and cut short-form video in CapCut for the sponsorship push.
       </p>
     </div>
@@ -26,8 +26,8 @@ export function JoviaPerformance() {
 export function Jakes58Performance() {
   return (
     <div className="mt-5 pt-5 border-t border-[#333] grid md:grid-cols-2 gap-8">
-      <div>
-        <p className="text-xs text-[#6E6255] uppercase tracking-wide mb-4">Instagram · Jun 15–Aug 31, 2026</p>
+      <div className="space-y-4">
+        <p className="text-xs text-[#B3B3B3] uppercase tracking-wide">Instagram · Jun 15–Aug 31, 2026</p>
         <DonutChart
           centerLabel="Total Views"
           centerValue="187K"
@@ -36,7 +36,7 @@ export function Jakes58Performance() {
             { label: 'Non-followers', value: 42.9, color: '#3b3b3b' },
           ]}
         />
-        <p className="text-xs text-[#6E6255] mt-4 mb-2">By content type</p>
+        <p className="text-xs text-[#B3B3B3]">By content type</p>
         <StatChips
           items={[
             { label: 'Posts', value: '47.5%' },
@@ -44,7 +44,7 @@ export function Jakes58Performance() {
             { label: 'Stories', value: '25.0%' },
           ]}
         />
-        <p className="text-xs text-[#6E6255] mt-4 mb-2">Top posts by views</p>
+        <p className="text-xs text-[#B3B3B3]">Top posts by views</p>
         <StatChips
           items={[
             { label: 'Jul 22', value: '13K' },
@@ -54,8 +54,8 @@ export function Jakes58Performance() {
           ]}
         />
       </div>
-      <div>
-        <p className="text-xs text-[#6E6255] uppercase tracking-wide mb-4">Facebook · Jul 13–Aug 9, 2026</p>
+      <div className="space-y-4">
+        <p className="text-xs text-[#B3B3B3] uppercase tracking-wide">Facebook · Jul 13–Aug 9, 2026</p>
         <DivergingBarChart
           data={[
             { label: 'Views', value: '194.6K', change: 27.6 },
@@ -66,7 +66,7 @@ export function Jakes58Performance() {
             { label: 'Follows', value: '70', change: -6.7 },
           ]}
         />
-        <p className="text-xs text-[#6E6255] mt-4">
+        <p className="text-xs text-[#B3B3B3]">
           Net follows still grew 487.5% period over period, even as raw follow count dipped.
         </p>
       </div>

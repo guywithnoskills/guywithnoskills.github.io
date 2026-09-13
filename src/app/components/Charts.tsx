@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
+import { TrendingUp, TrendingDown } from 'lucide-react';
 
 interface DivergingDatum {
   label: string;
@@ -7,48 +8,67 @@ interface DivergingDatum {
   change: number;
 }
 
-export function DivergingBarChart({ data }: { data: DivergingDatum[] }) {
+export function DivergingBarChart({ data, live = true }: { data: DivergingDatum[]; live?: boolean }) {
   const [hovered, setHovered] = useState<number | null>(null);
   const maxAbs = Math.max(...data.map((d) => Math.abs(d.change)), 1);
 
   return (
-    <div className="space-y-4">
-      {data.map((d, i) => {
-        const positive = d.change >= 0;
-        const widthPct = (Math.abs(d.change) / maxAbs) * 50;
-        return (
-          <div
-            key={d.label}
-            className="relative"
-            onMouseEnter={() => setHovered(i)}
-            onMouseLeave={() => setHovered(null)}
-          >
-            <div className="flex items-center justify-between text-sm mb-1">
-              <span className="text-white font-medium">{d.label}</span>
-              <span className="text-[#B3B3B3]">
-                {d.value}
-                <span className={`ml-2 font-medium ${positive ? 'text-[#1DB954]' : 'text-[#e0575b]'}`}>
-                  {positive ? '+' : ''}
-                  {d.change}%
+    <div className="bg-[#161f16] border border-[#2a3a2a] rounded-xl p-5">
+      {live && (
+        <div className="flex items-center gap-2 mb-5">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1DB954] opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1DB954]" />
+          </span>
+          <span className="text-xs font-semibold text-[#1DB954] uppercase tracking-wide">Live Performance</span>
+        </div>
+      )}
+      <div className="space-y-5">
+        {data.map((d, i) => {
+          const positive = d.change >= 0;
+          const widthPct = (Math.abs(d.change) / maxAbs) * 50;
+          const Icon = positive ? TrendingUp : TrendingDown;
+          return (
+            <div
+              key={d.label}
+              className="relative"
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
+              style={{ opacity: hovered === null || hovered === i ? 1 : 0.45, transition: 'opacity 0.2s' }}
+            >
+              <div className="flex items-center justify-between text-sm mb-1.5">
+                <span className="text-white font-medium">{d.label}</span>
+                <span className="flex items-center gap-2">
+                  <span className="text-[#B3B3B3]">{d.value}</span>
+                  <span
+                    className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold ${
+                      positive ? 'bg-[#1DB954]/15 text-[#1DB954]' : 'bg-[#e0575b]/15 text-[#e0575b]'
+                    }`}
+                  >
+                    <Icon size={11} />
+                    {positive ? '+' : ''}
+                    {d.change}%
+                  </span>
                 </span>
-              </span>
+              </div>
+              <div className="relative h-3 bg-[#0d130d] rounded-full overflow-hidden">
+                <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#3a4a3a] z-10" />
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${widthPct}%` }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: 'easeOut', delay: i * 0.08 }}
+                  className={`absolute top-0 bottom-0 rounded-full ${
+                    positive
+                      ? 'bg-linear-to-r from-[#1DB954]/60 to-[#1DB954] left-1/2'
+                      : 'bg-linear-to-l from-[#e0575b]/60 to-[#e0575b] right-1/2'
+                  }`}
+                />
+              </div>
             </div>
-            <div className="relative h-2.5 bg-[#1a1a1a] rounded-full overflow-hidden">
-              <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#404040]" />
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: `${widthPct}%` }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, ease: 'easeOut', delay: i * 0.06 }}
-                className={`absolute top-0 bottom-0 rounded-full ${positive ? 'bg-[#1DB954]' : 'bg-[#e0575b]'} ${
-                  positive ? 'left-1/2' : 'right-1/2'
-                }`}
-                style={{ opacity: hovered === null || hovered === i ? 1 : 0.35 }}
-              />
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -67,10 +87,10 @@ export function DonutChart({ data, centerLabel, centerValue }: { data: DonutDatu
   let offsetAcc = 0;
 
   return (
-    <div className="flex flex-col sm:flex-row items-center gap-8">
+    <div className="bg-[#161f16] border border-[#2a3a2a] rounded-xl p-5 flex flex-col sm:flex-row items-center gap-8">
       <div className="relative w-[160px] h-[160px] flex-shrink-0">
         <svg viewBox="0 0 160 160" className="w-full h-full -rotate-90">
-          <circle cx="80" cy="80" r={radius} fill="none" stroke="#1a1a1a" strokeWidth="18" />
+          <circle cx="80" cy="80" r={radius} fill="none" stroke="#0d130d" strokeWidth="18" />
           {data.map((d, i) => {
             const frac = d.value / total;
             const dash = frac * circumference;
@@ -139,7 +159,7 @@ export function StatChips({ items }: { items: { label: string; value: string }[]
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: i * 0.08 }}
-          className="text-center bg-[#1a1a1a] rounded-lg py-3 px-2"
+          className="text-center bg-[#161f16] border border-[#2a3a2a] rounded-lg py-3 px-2"
         >
           <div className="text-lg font-bold text-[#1DB954]">{item.value}</div>
           <div className="text-[10px] text-[#B3B3B3] mt-0.5">{item.label}</div>
