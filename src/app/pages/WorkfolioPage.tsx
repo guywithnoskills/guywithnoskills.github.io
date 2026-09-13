@@ -14,6 +14,7 @@ import {
   Download
 } from 'lucide-react';
 import { useMusic } from '../components/MusicContext';
+import { JoviaPerformance, Jakes58Performance } from '../components/CaseStudyCharts';
 
 const projects = [
   {
@@ -24,7 +25,17 @@ const projects = [
     videoUrl: null,
     attachmentUrl: `${import.meta.env.BASE_URL}Jovia-Marathon-Social-Listening-Report.pdf`,
     attachmentLabel: 'View full report (PDF)',
-    category: 'Social Media Listening'
+    category: 'Social Media Listening',
+    chart: <JoviaPerformance />
+  },
+  {
+    id: 'jakes58-performance',
+    title: "Jake's 58 Casino Hotel",
+    description: 'Manage organic content and community across Instagram and Facebook for Jake\'s 58, tracking views, follower quality, and content-type performance to guide what gets made next.',
+    details: 'Facebook views grew 27.6% and net follows grew 487.5% period over period, while Instagram posts and reels drove the bulk of reach.',
+    videoUrl: null,
+    category: 'Social Media Management',
+    chart: <Jakes58Performance />
   },
   {
     id: 'molloy-persona',
@@ -116,47 +127,6 @@ export default function WorkfolioPage() {
 
             <div className="mb-8 pb-8 border-b border-[#2a2a2a]">
               <div className="flex items-center gap-3 mb-6">
-                <Images className="text-[#1DB954]" size={20} />
-                <h2 className="text-xl font-bold text-white">Gallery</h2>
-              </div>
-              <div className="bg-[#2a2a2a] rounded-lg p-6 hover:bg-[#333333] transition-all duration-300 group">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#1DB954] transition-colors duration-300 mb-3">
-                      Social Media Content Archive
-                    </h3>
-                    <p className="text-[#B3B3B3] mb-4 leading-relaxed">
-                      A comprehensive collection of my creative work including social media posts, reels, stories, and campaigns.
-                      This gallery showcases my content creation journey, visual storytelling abilities, and brand communication
-                      strategies across various platforms and projects.
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {['Instagram Posts', 'Reels', 'Stories', 'Campaign Assets'].map((tag) => (
-                        <span key={tag} className="px-3 py-1 bg-[#1DB954]/20 text-[#1DB954] rounded-full text-xs font-medium">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => window.open('https://drive.google.com/drive/folders/1A30_aYk-DgjiBnytV77CJ3AD0SJbE8z2?usp=sharing', '_blank')}
-                    className="ml-4 bg-[#1DB954] hover:bg-[#1ed760] text-black p-3 rounded-full transition-all duration-300 hover:scale-110 btn-glow-green"
-                  >
-                    <ExternalLink size={20} />
-                  </button>
-                </div>
-                <button
-                  onClick={() => window.open('https://drive.google.com/drive/folders/1A30_aYk-DgjiBnytV77CJ3AD0SJbE8z2?usp=sharing', '_blank')}
-                  className="w-full bg-[#1DB954]/10 hover:bg-[#1DB954]/20 border border-[#1DB954]/30 text-[#1DB954] font-medium py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
-                >
-                  <ExternalLink size={16} />
-                  View Complete Gallery
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <div className="flex items-center gap-3 mb-6">
                 <PlayCircle className="text-[#1DB954]" size={20} />
                 <h2 className="text-xl font-bold text-white">Key Projects</h2>
               </div>
@@ -204,8 +174,50 @@ export default function WorkfolioPage() {
                         {project.attachmentLabel}
                       </a>
                     )}
+                    {project.chart}
                   </div>
                 ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <Images className="text-[#1DB954]" size={20} />
+                <h2 className="text-xl font-bold text-white">Gallery</h2>
+              </div>
+              <div className="bg-[#2a2a2a] rounded-lg p-6 hover:bg-[#333333] transition-all duration-300 group">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-white group-hover:text-[#1DB954] transition-colors duration-300 mb-3">
+                      Social Media Content Archive
+                    </h3>
+                    <p className="text-[#B3B3B3] mb-4 leading-relaxed">
+                      A comprehensive collection of my creative work including social media posts, reels, stories, and campaigns.
+                      This gallery showcases my content creation journey, visual storytelling abilities, and brand communication
+                      strategies across various platforms and projects.
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {['Instagram Posts', 'Reels', 'Stories', 'Campaign Assets'].map((tag) => (
+                        <span key={tag} className="px-3 py-1 bg-[#1DB954]/20 text-[#1DB954] rounded-full text-xs font-medium">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => window.open('https://drive.google.com/drive/folders/1A30_aYk-DgjiBnytV77CJ3AD0SJbE8z2?usp=sharing', '_blank')}
+                    className="ml-4 bg-[#1DB954] hover:bg-[#1ed760] text-black p-3 rounded-full transition-all duration-300 hover:scale-110 btn-glow-green"
+                  >
+                    <ExternalLink size={20} />
+                  </button>
+                </div>
+                <button
+                  onClick={() => window.open('https://drive.google.com/drive/folders/1A30_aYk-DgjiBnytV77CJ3AD0SJbE8z2?usp=sharing', '_blank')}
+                  className="w-full bg-[#1DB954]/10 hover:bg-[#1DB954]/20 border border-[#1DB954]/30 text-[#1DB954] font-medium py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+                >
+                  <ExternalLink size={16} />
+                  View Complete Gallery
+                </button>
               </div>
             </div>
           </div>
