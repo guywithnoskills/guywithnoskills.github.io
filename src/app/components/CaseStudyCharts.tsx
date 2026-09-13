@@ -11,10 +11,10 @@ export function JoviaPerformance() {
         data={[
           { label: 'Total Mentions', value: '91', change: 727 },
           { label: 'Total Reach', value: '318K', change: 1655 },
-          { label: 'Social Reactions', value: '3,761', change: 707 },
-          { label: 'Social Comments', value: '364', change: 2327 },
-          { label: 'Social Shares', value: '191', change: 6267 },
-          { label: 'Total Interactions', value: '4,316', change: 792 },
+          { label: 'Social Media Reactions', value: '3,761', change: 707 },
+          { label: 'Social Media Comments', value: '364', change: 2327 },
+          { label: 'Social Media Shares', value: '191', change: 6267 },
+          { label: 'Total Social Media Interactions', value: '4,316', change: 792 },
         ]}
       />
       <p className="text-xs text-[#B3B3B3]">
