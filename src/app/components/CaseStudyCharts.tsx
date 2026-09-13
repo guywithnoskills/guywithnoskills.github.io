@@ -5,15 +5,16 @@ export function JoviaPerformance() {
   return (
     <div className="mt-5 pt-5 border-t border-[#333] space-y-4">
       <p className="text-xs text-[#B3B3B3] uppercase tracking-wide">
-        Cross-network performance · Sep 1–13, 2026 vs. prior year
+        Marathon week performance · Apr 30–May 6, 2026 vs. prior week
       </p>
       <DivergingBarChart
         data={[
-          { label: 'Impressions', value: '856,699', change: 147.7 },
-          { label: 'Audience', value: '52,083', change: 5.1 },
-          { label: 'Post Link Clicks', value: '5,701', change: -30.9 },
-          { label: 'Engagements', value: '6,728', change: -44.1 },
-          { label: 'Engagement Rate', value: '0.8%', change: -77.4 },
+          { label: 'Total Mentions', value: '91', change: 727 },
+          { label: 'Total Reach', value: '318K', change: 1655 },
+          { label: 'Social Reactions', value: '3,761', change: 707 },
+          { label: 'Social Comments', value: '364', change: 2327 },
+          { label: 'Social Shares', value: '191', change: 6267 },
+          { label: 'Total Interactions', value: '4,316', change: 792 },
         ]}
       />
       <p className="text-xs text-[#B3B3B3]">
