@@ -15,6 +15,8 @@ import {
 } from 'lucide-react';
 import { useMusic } from '../components/MusicContext';
 import { JoviaPerformance, Jakes58Performance } from '../components/CaseStudyCharts';
+import { ImpactStat } from '../components/ImpactStat';
+import { SpotlightCard } from '../components/SpotlightCard';
 import jakes58Logo from '../../assets/client-jakes58.webp';
 import joviaLogo from '../../assets/client-jovia.webp';
 import dfvLogo from '../../assets/client-dfv.webp';
@@ -32,6 +34,8 @@ const projects = [
     attachmentUrl: `${import.meta.env.BASE_URL}Jovia-Marathon-Social-Listening-Report.pdf`,
     attachmentLabel: 'View full report (PDF)',
     category: 'Social Media Listening',
+    impact: 147.7,
+    impactLabel: 'Impressions growth',
     chart: <JoviaPerformance />
   },
   {
@@ -42,6 +46,8 @@ const projects = [
     details: 'Facebook views grew 27.6% and net follows grew 487.5% period over period, while Instagram posts and reels drove the bulk of reach.',
     videoUrl: null,
     category: 'Social Media Management',
+    impact: 487.5,
+    impactLabel: 'Net follows growth',
     chart: <Jakes58Performance />
   },
   {
@@ -53,7 +59,9 @@ const projects = [
     videoUrl: null,
     attachmentUrl: `${import.meta.env.BASE_URL}Molloy-Nursing-Brand-Persona.xlsx`,
     attachmentLabel: 'Download analysis (XLSX)',
-    category: 'Brand Persona · MRI-Simmons'
+    category: 'Brand Persona · MRI-Simmons',
+    impact: 63,
+    impactLabel: 'See nursing as a career, not a job'
   },
   {
     id: 'dyson-campaign',
@@ -71,7 +79,9 @@ const projects = [
     description: 'Ran identification, outreach, briefing, and deliverable planning for 15 dental creators as part of an emerging creator and community marketing program.',
     details: 'Contributed to a 57% increase in profile visits for the program.',
     videoUrl: null,
-    category: 'Creator Marketing'
+    category: 'Creator Marketing',
+    impact: 57,
+    impactLabel: 'Profile visits'
   }
 ];
 
@@ -141,61 +151,75 @@ export default function WorkfolioPage() {
                 <h2 className="text-xl font-bold text-white">Key Projects</h2>
               </div>
               <div className="space-y-6">
-                {projects.map((project) => (
-                  <div key={project.id} className="bg-[#2a2a2a] rounded-lg p-6 hover:bg-[#333333] transition-all duration-300 group">
-                    <div className="flex items-center gap-3 pb-4 mb-4 border-b border-white/10">
-                      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
-                        <img src={project.brand.logo} alt={project.brand.name} className="w-7 h-7 object-contain" />
-                      </div>
-                      <div>
-                        <p className="text-[10px] uppercase tracking-wide text-[#B3B3B3]">Client</p>
-                        <p className="text-sm font-semibold text-white">{project.brand.name}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <h3 className="text-lg font-bold text-white group-hover:text-[#1DB954] transition-colors duration-300">
-                            {project.title}
-                          </h3>
-                          <span className="px-2 py-1 bg-[#1DB954]/20 text-[#1DB954] rounded text-xs font-medium">
-                            {project.category}
-                          </span>
+                {projects.map((project) => {
+                  const highlighted = project.impact != null;
+                  const showHero = highlighted && !project.chart;
+                  return (
+                    <SpotlightCard
+                      key={project.id}
+                      className={`rounded-lg p-6 hover:bg-[#333333] transition-all duration-300 group bg-[#2a2a2a] ${
+                        highlighted ? 'border border-[#1DB954]/40 shadow-[0_0_22px_rgba(29,185,84,0.18)]' : 'border border-white/5'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3 pb-4 mb-4 border-b border-white/10">
+                        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
+                          <img src={project.brand.logo} alt={project.brand.name} className="w-7 h-7 object-contain" />
                         </div>
-                        <p className="text-[#B3B3B3] mb-3">{project.description}</p>
-                        <p className="text-[#B3B3B3] text-sm">{project.details}</p>
+                        <div>
+                          <p className="text-[10px] uppercase tracking-wide text-[#B3B3B3]">Client</p>
+                          <p className="text-sm font-semibold text-white">{project.brand.name}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-2">
+                            <h3 className="text-lg font-bold text-white group-hover:text-[#1DB954] transition-colors duration-300">
+                              {project.title}
+                            </h3>
+                            <span className="px-2 py-1 bg-[#1DB954]/20 text-[#1DB954] rounded text-xs font-medium">
+                              {project.category}
+                            </span>
+                          </div>
+                          {showHero && (
+                            <div className="mb-3">
+                              <ImpactStat value={project.impact as number} label={project.impactLabel as string} size="md" />
+                            </div>
+                          )}
+                          <p className="text-[#B3B3B3] mb-3">{project.description}</p>
+                          <p className="text-[#B3B3B3] text-sm">{project.details}</p>
+                        </div>
+                        {project.videoUrl && (
+                          <button
+                            onClick={() => window.open(project.videoUrl, '_blank')}
+                            className="ml-4 bg-[#1DB954] hover:bg-[#1ed760] text-black p-3 rounded-full transition-all duration-300 hover:scale-110 btn-glow-green"
+                          >
+                            <PlayCircle size={20} />
+                          </button>
+                        )}
                       </div>
                       {project.videoUrl && (
                         <button
                           onClick={() => window.open(project.videoUrl, '_blank')}
-                          className="ml-4 bg-[#1DB954] hover:bg-[#1ed760] text-black p-3 rounded-full transition-all duration-300 hover:scale-110 btn-glow-green"
+                          className="w-full bg-[#1DB954]/10 hover:bg-[#1DB954]/20 border border-[#1DB954]/30 text-[#1DB954] font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
                         >
-                          <PlayCircle size={20} />
+                          <PlayCircle size={16} />
+                          Watch Campaign Video
                         </button>
                       )}
-                    </div>
-                    {project.videoUrl && (
-                      <button
-                        onClick={() => window.open(project.videoUrl, '_blank')}
-                        className="w-full bg-[#1DB954]/10 hover:bg-[#1DB954]/20 border border-[#1DB954]/30 text-[#1DB954] font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
-                      >
-                        <PlayCircle size={16} />
-                        Watch Campaign Video
-                      </button>
-                    )}
-                    {project.attachmentUrl && (
-                      <a
-                        href={project.attachmentUrl}
-                        download
-                        className="w-full bg-[#1DB954]/10 hover:bg-[#1DB954]/20 border border-[#1DB954]/30 text-[#1DB954] font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
-                      >
-                        <Download size={16} />
-                        {project.attachmentLabel}
-                      </a>
-                    )}
-                    {project.chart}
-                  </div>
-                ))}
+                      {project.attachmentUrl && (
+                        <a
+                          href={project.attachmentUrl}
+                          download
+                          className="w-full bg-[#1DB954]/10 hover:bg-[#1DB954]/20 border border-[#1DB954]/30 text-[#1DB954] font-medium py-2 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                          <Download size={16} />
+                          {project.attachmentLabel}
+                        </a>
+                      )}
+                      {project.chart}
+                    </SpotlightCard>
+                  );
+                })}
               </div>
             </div>
 
