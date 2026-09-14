@@ -13,7 +13,7 @@ export function JoviaPerformance() {
           { label: 'Audience', value: '52,083', change: 5.1 },
           { label: 'Post Link Clicks', value: '5,701', change: -30.9 },
           { label: 'Engagements', value: '345,781', change: 136.9 },
-          { label: 'Engagement Rate', value: '0.8%', change: 108.2 },
+          { label: 'Engagement Rate', value: '0.8%', change: 108.2, changeLabel: '2.1x' },
         ]}
       />
       <p className="text-xs text-[#B3B3B3]">

@@ -6,6 +6,7 @@ interface DivergingDatum {
   label: string;
   value: string;
   change: number;
+  changeLabel?: string;
 }
 
 export function DivergingBarChart({ data, live = true }: { data: DivergingDatum[]; live?: boolean }) {
@@ -46,8 +47,7 @@ export function DivergingBarChart({ data, live = true }: { data: DivergingDatum[
                     }`}
                   >
                     <Icon size={11} />
-                    {positive ? '+' : ''}
-                    {d.change}%
+                    {d.changeLabel ?? `${positive ? '+' : ''}${d.change}%`}
                   </span>
                 </span>
               </div>
