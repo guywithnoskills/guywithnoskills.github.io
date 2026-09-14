@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
-import { Volume2, VolumeX, Volume1, Settings, Menu, X, User, FolderOpen, FileText, Mail } from 'lucide-react';
+import { Volume2, VolumeX, Volume1, Settings, Menu, X, Home, User, FolderOpen, FileText, Mail } from 'lucide-react';
 import { useMusic } from './MusicContext';
 import { Play, Pause, SkipForward } from 'lucide-react';
 
@@ -9,6 +9,7 @@ interface LayoutProps {
 }
 
 const NAV_LINKS = [
+  { label: 'Home', path: '/', icon: Home },
   { label: 'About', path: '/about', icon: User },
   { label: 'Work', path: '/workfolio', icon: FolderOpen },
   { label: 'Resume', path: '/resume', icon: FileText },

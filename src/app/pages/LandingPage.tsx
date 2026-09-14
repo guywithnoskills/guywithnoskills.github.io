@@ -39,11 +39,11 @@ const work = [
 ];
 
 const experienceSnapshot = [
-  { title: 'Marketing Strategy Associate', company: 'The EGC Group', period: '2025 – Present', impact: 57 },
-  { title: 'Marketing Coordinator', company: 'Hofstra University', period: '2025', impact: 30 },
-  { title: 'Brand Marketing Strategist', company: 'The Creative Roots', period: '2023 – 2025', impact: 30 },
-  { title: 'Brand Marketing Strategist', company: 'Pixelfox', period: '2022 – 2023', impact: 66 },
-  { title: 'Marketing Manager', company: 'Energy Mission Machineries', period: '2021 – 2022', impact: 30 },
+  { title: 'Marketing Strategy Associate', company: 'The EGC Group', period: '2025 – Present' },
+  { title: 'Marketing Coordinator', company: 'Hofstra University', period: '2025' },
+  { title: 'Brand Marketing Strategist', company: 'The Creative Roots', period: '2023 – 2025' },
+  { title: 'Brand Marketing Strategist', company: 'Pixelfox', period: '2022 – 2023' },
+  { title: 'Marketing Manager', company: 'Energy Mission Machineries', period: '2021 – 2022' },
 ];
 
 const focusAreas = [
@@ -227,9 +227,6 @@ export default function LandingPage() {
             {experienceSnapshot.map((role) => (
               <div key={role.company} className="flex items-baseline justify-between py-3">
                 <div>
-                  {role.impact >= 50 && (
-                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#1DB954] animate-greenPulse mr-2 align-middle" />
-                  )}
                   <span className="text-white font-medium">{role.title}</span>
                   <span className="text-[#B3B3B3]"> · {role.company}</span>
                 </div>

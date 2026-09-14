@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useReducedMotion, useInView } from 'motion/react';
+import { motion, useScroll, useTransform, useReducedMotion } from 'motion/react';
 import { Download } from 'lucide-react';
 import { ImpactStat } from '../components/ImpactStat';
 
@@ -118,19 +118,12 @@ function TimelineEntry({ item, index, total, scrollYProgress, reduced }) {
   const end = (index + 0.6) / total;
   const dotScale = useTransform(scrollYProgress, [start, end], [0.6, 1]);
   const dotOpacity = useTransform(scrollYProgress, [start, end], [0.35, 1]);
-  const dotRef = useRef(null);
-  const dotInView = useInView(dotRef, { once: true, margin: '-100px' });
-  const showHero = item.impact >= 50;
-
   return (
     <div className="relative flex gap-6 md:gap-8 mb-14 md:mb-16 last:mb-0">
       <div className="relative flex-shrink-0 w-4 flex justify-center pt-1.5">
         <motion.span
-          ref={dotRef}
           style={reduced ? { opacity: 1, scale: 1 } : { scale: dotScale, opacity: dotOpacity }}
-          className={`w-4 h-4 rounded-full bg-[#1DB954] ring-4 ring-[#121212] z-10 ${
-            showHero && dotInView ? 'animate-greenPulse' : ''
-          }`}
+          className="w-4 h-4 rounded-full bg-[#1DB954] ring-4 ring-[#121212] z-10"
         />
       </div>
       <motion.div
