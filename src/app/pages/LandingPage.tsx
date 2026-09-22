@@ -10,7 +10,6 @@ import joviaLogo from '../../assets/client-jovia.webp';
 import dfvLogo from '../../assets/client-dfv.webp';
 import egcLogo from '../../assets/client-egc.webp';
 import molloyLogo from '../../assets/client-molloy.webp';
-import nikeLogo from '../../assets/client-nike.png';
 import dysonLogo from '../../assets/client-dyson.svg';
 
 const RESUME_FILE = `${import.meta.env.BASE_URL}Malav-Akhani-Resume.pdf`;
@@ -26,7 +25,6 @@ const brands = [
   { name: 'Jovia Financial Credit Union', logo: joviaLogo },
   { name: 'Molloy University', logo: molloyLogo },
   { name: "Jake's 58 Casino Hotel", logo: jakes58Logo },
-  { name: 'Nike', logo: nikeLogo },
   { name: 'Designs for Vision', logo: dfvLogo },
   { name: 'Dyson', logo: dysonLogo },
   { name: 'Energy Mission Machineries', logo: energyMissionLogo },
@@ -41,8 +39,8 @@ const work = [
 const experienceSnapshot = [
   { title: 'Marketing Strategy Associate', company: 'The EGC Group', period: '2025 – Present' },
   { title: 'Marketing Coordinator', company: 'Hofstra University', period: '2025' },
-  { title: 'Brand Marketing Strategist', company: 'The Creative Roots', period: '2023 – 2025' },
-  { title: 'Brand Marketing Strategist', company: 'Pixelfox', period: '2022 – 2023' },
+  { title: 'Sr. Social Media Manager', company: 'The Creative Roots', period: '2023 – 2025' },
+  { title: 'Social Media Strategist', company: 'Pixelfox', period: '2022 – 2023' },
   { title: 'Marketing Manager', company: 'Energy Mission Machineries', period: '2021 – 2022' },
 ];
 

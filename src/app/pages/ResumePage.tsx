@@ -14,11 +14,12 @@ const experiences = [
     impact: 57,
     impactLabel: 'Profile visits',
     achievements: [
-      'Orchestrated integrated brand, social, and content strategies for Jovia Financial Credit Union, Molloy University, Jake’s 58 Casino Hotel, Vaughn College, and other agency clients, achieving 18–22% higher engagement',
+      'Orchestrated integrated brand, social, and content strategies for Jovia Financial Credit Union, Molloy University, Jake’s 58 Casino Hotel, Vaughn College, and other agency clients, achieving 19–38% higher engagement',
       'Benchmarked eight competitor brands via a cross-platform social audit for Jovia in Brandwatch, informing a content strategy shift tied to a 29% increase in total interactions',
       'Formulated organic content recommendations for Molloy University using MRI-Simmons Catalyst profiling, contributing to 16% higher social engagement',
       'Evaluated 40+ competitive media-spend reports in MediaRadar 360 to surface positioning opportunities, shortening prospecting time 30% for a $500K new-business pipeline',
       'Managed outreach and briefing for 15 dental creators, contributing to a 57% increase in profile visits for a client’s creator marketing program',
+      'Applied on-page SEO, keyword research, and Tableau reporting alongside paid and organic social strategy for agency clients',
     ],
   },
   {
@@ -34,7 +35,7 @@ const experiences = [
     ],
   },
   {
-    title: 'Brand Marketing Strategist',
+    title: 'Sr. Social Media Manager',
     company: 'The Creative Roots · Mumbai, MH',
     period: 'Dec 2023 – Jan 2025',
     tags: ['Influencer Strategy', 'Content Campaigns'],
@@ -43,11 +44,11 @@ const experiences = [
     achievements: [
       "Led Sling TV's Cricket World Cup multi-platform content campaign, driving 25% subscription growth and 30% audience reach expansion",
       'Developed brand narratives and influencer strategy for talent including Hardik Pandya and Virat Kohli, boosting brand engagement 20%',
-      'Owned social content strategy and AI-assisted optimization for 10+ brands including Samsung, achieving 20% average ROI growth',
+      'Owned social content strategy and AI-assisted optimization for 10+ brands including Godrej and Samsung, achieving 20% average ROI growth',
     ],
   },
   {
-    title: 'Brand Marketing Strategist',
+    title: 'Social Media Strategist',
     company: 'Pixelfox · Mumbai, MH',
     period: 'Aug 2022 – Dec 2023',
     tags: ['PR', 'Paid Social'],
@@ -78,7 +79,7 @@ const education = [
   {
     degree: 'MBA in Marketing',
     institution: 'Hofstra University, Frank G. Zarb School of Business',
-    period: 'Jan 2025 – Jan 2027 · GPA 3.6',
+    period: 'Jan 2025 – Dec 2026 · GPA 3.6',
   },
 ];
 

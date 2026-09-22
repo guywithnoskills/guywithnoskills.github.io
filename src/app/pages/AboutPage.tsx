@@ -7,7 +7,6 @@ import joviaLogo from '../../assets/client-jovia.webp';
 import dfvLogo from '../../assets/client-dfv.webp';
 import egcLogo from '../../assets/client-egc.webp';
 import molloyLogo from '../../assets/client-molloy.webp';
-import nikeLogo from '../../assets/client-nike.png';
 import dysonLogo from '../../assets/client-dyson.svg';
 
 const skillGroups = [
@@ -21,7 +20,6 @@ const brands = [
   { name: 'Jovia Financial Credit Union', logo: joviaLogo },
   { name: 'Molloy University', logo: molloyLogo },
   { name: "Jake's 58 Casino Hotel", logo: jakes58Logo },
-  { name: 'Nike', logo: nikeLogo },
   { name: 'Designs for Vision', logo: dfvLogo },
   { name: 'Dyson', logo: dysonLogo },
   { name: 'Energy Mission Machineries', logo: energyMissionLogo },
