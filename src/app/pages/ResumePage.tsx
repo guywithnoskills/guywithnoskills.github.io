@@ -7,19 +7,19 @@ const RESUME_FILE = `${import.meta.env.BASE_URL}Malav-Akhani-Resume.pdf`;
 
 const experiences = [
   {
-    title: 'Marketing Strategy Associate',
+    title: 'Product Marketing Analyst',
     company: 'The EGC Group · Melville, NY',
     period: 'Dec 2025 – Present',
-    tags: ['Integrated Strategy', 'Competitive Intelligence'],
+    tags: ['Product Marketing', 'Competitive Intelligence'],
     impact: 57,
     impactLabel: 'Profile visits',
     achievements: [
-      'Orchestrated integrated brand, social, and content strategies for Jovia Financial Credit Union, Molloy University, Jake’s 58 Casino Hotel, Vaughn College, and other agency clients, achieving 19–38% higher engagement',
-      'Benchmarked eight competitor brands via a cross-platform social audit for Jovia in Brandwatch, informing a content strategy shift tied to a 29% increase in total interactions',
-      'Formulated organic content recommendations for Molloy University using MRI-Simmons Catalyst profiling, contributing to 16% higher social engagement',
-      'Evaluated 40+ competitive media-spend reports in MediaRadar 360 to surface positioning opportunities, shortening prospecting time 30% for a $500K new-business pipeline',
-      'Managed outreach and briefing for 15 dental creators, contributing to a 57% increase in profile visits for a client’s creator marketing program',
-      'Applied on-page SEO, keyword research, and Tableau reporting alongside paid and organic social strategy for agency clients',
+      'Drove 19–38% higher engagement across four client accounts by turning audience and performance data into digital campaign strategy, message tests, and creative recommendations using Google Ads, Meta Ads Manager, and Brandwatch',
+      "Informed a content and messaging shift associated with a 29% increase in total interactions by benchmarking eight competitor brands and measuring Jovia Financial Credit Union's share of voice across Instagram, Facebook, LinkedIn, TikTok, and X using Brandwatch",
+      "Lifted social engagement 16% and improved conversion rates by using MRI-Simmons Catalyst to identify audience segments and refine Molloy University's targeting, messages, and content plan",
+      'Contributed to $500K in new business won by the agency team and cut prospecting time about 30% by synthesizing 40+ competitor media-spend reports with Klue, HubSpot, and Google Analytics data into prospecting insights',
+      'Ran market research surveys for Windward and Catholic Health, translating audience feedback into customer insights for account messaging decisions',
+      "Contributed to a 57% increase in profile visits for Designs for Vision's creator marketing program by coordinating creator identification, outreach, briefing, and deliverable planning for 15 dental creators",
     ],
   },
   {
@@ -30,47 +30,48 @@ const experiences = [
     impact: 30,
     impactLabel: 'Recruitment growth',
     achievements: [
-      'Transformed LinkedIn, Instagram, and website presence with brand-consistent visual content, lifting professional image 30% and student engagement 10%',
-      'Drove 30% recruitment growth via Mailchimp campaigns to a 150K-contact database, boosting event visibility 25% and attendance 15%',
+      "Improved professional image 30% and student engagement 10% by redesigning Hofstra's digital communications across LinkedIn, Instagram, and the website using Canva-crafted visual content and brand-consistent design",
+      "Grew Hofstra's recruitment pipeline 30% by running Mailchimp email campaigns to a 150K-contact database",
+      'Lifted event visibility 25% and attendance 15% by driving event awareness through organic and paid Meta/Facebook promotion',
     ],
   },
   {
-    title: 'Sr. Social Media Manager',
+    title: 'Sr. Digital Media Manager',
     company: 'The Creative Roots · Mumbai, MH',
     period: 'Dec 2023 – Jan 2025',
     tags: ['Influencer Strategy', 'Content Campaigns'],
     impact: 30,
     impactLabel: 'Audience reach expansion',
     achievements: [
-      "Led Sling TV's Cricket World Cup multi-platform content campaign, driving 25% subscription growth and 30% audience reach expansion",
-      'Developed brand narratives and influencer strategy for talent including Hardik Pandya and Virat Kohli, boosting brand engagement 20%',
-      'Owned social content strategy and AI-assisted optimization for 10+ brands including Godrej and Samsung, achieving 20% average ROI growth',
+      "Grew subscriptions 25% and reach 30% by leading Sling TV's Cricket World Cup campaign across Instagram, Facebook, and Twitter",
+      'Raised brand engagement 20% by building brand narratives and influencer content strategy for athletes including Hardik Pandya and Virat Kohli, using AI-assisted scheduling and social-listening tools',
+      'Grew average ROI 20% across a 10+ brand roster, including Samsung and other consumer brands, by running social media content strategy and using performance data to guide creative and content-calendar decisions',
     ],
   },
   {
-    title: 'Social Media Strategist',
+    title: 'Brand Strategist',
     company: 'Pixelfox · Mumbai, MH',
     period: 'Aug 2022 – Dec 2023',
     tags: ['PR', 'Paid Social'],
     impact: 66,
     impactLabel: 'Reach growth',
     achievements: [
-      'Secured features in Vogue, Forbes, and Fortune for clients including Netflix India and Dyson India, driving a 40% increase in positive coverage',
-      'Grew followers 21% and reach 66% through social and influencer channel management',
-      'Drove a 20% sales surge through Meta and LinkedIn Ads campaigns integrated with Mailchimp',
-      "Earned the 'Best Use of Instagram & Social Media' award; lifted client retention 25%",
+      'Grew positive brand coverage 40% by placing client stories in Vogue, Forbes, and Fortune for Netflix India and Dyson India',
+      'Grew social following 21% and reach 66% by managing content strategy and building influencer marketing partnerships',
+      'Increased sales 20% by pairing Meta Ads, LinkedIn Ads, and YouTube Ads campaigns with Mailchimp email promotion',
+      "Lifted client retention 25% by delivering innovative platform use that earned the 'Best Use of Instagram & Social Media' award",
     ],
   },
   {
-    title: 'Marketing Manager',
+    title: 'Marketing Manager (Part-time)',
     company: 'Energy Mission Machineries India Ltd · Ahmedabad, GJ',
     period: 'Feb 2021 – Jul 2022',
-    tags: ['SEO', 'Lead Generation'],
+    tags: ['Social Analytics', 'Lead Generation'],
     impact: 30,
     impactLabel: 'Qualified leads',
     achievements: [
-      'Increased qualified leads 30% for hydraulic shearing and CNC press bending machines through social analytics and multichannel optimization',
-      'Boosted web traffic 30% via content coordination and website optimization using Google Analytics',
+      'Generated a 30% increase in qualified leads for hydraulic shearing and CNC press bending machines by running social media analytics and multichannel campaign optimization',
+      'Increased web traffic 30% by coordinating social content and optimizing the company website with Google Analytics',
     ],
   },
 ];
@@ -78,8 +79,13 @@ const experiences = [
 const education = [
   {
     degree: 'MBA in Marketing',
-    institution: 'Hofstra University, Frank G. Zarb School of Business',
-    period: 'Jan 2025 – Dec 2026 · GPA 3.6',
+    institution: 'Hofstra University, Frank G. Zarb School of Business · Hempstead, NY',
+    period: 'Jan 2025 – Dec 2026 (expected) · GPA 3.6',
+  },
+  {
+    degree: 'Bachelor of Engineering in Mechanical Engineering',
+    institution: 'L.J. Institute of Engineering and Technology · Ahmedabad, India',
+    period: '2023',
   },
 ];
 
@@ -164,8 +170,9 @@ export default function ResumePage() {
         </div>
 
         <p className="text-[#B3B3B3] mb-14 max-w-xl">
-          Five-plus years across U.S. agency and India-based marketing roles, spanning brand, social,
-          influencer, and integrated strategy for clients from financial services to entertainment.
+          Product marketing analyst and digital marketer with 5+ years across U.S. agency and India-based roles.
+          Uses competitive intelligence, audience research, message testing, and performance data to sharpen
+          campaign strategy and sales prospecting.
         </p>
 
         <div ref={timelineRef} className="relative">

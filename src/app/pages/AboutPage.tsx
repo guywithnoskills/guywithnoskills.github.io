@@ -10,9 +10,9 @@ import molloyLogo from '../../assets/client-molloy.webp';
 import dysonLogo from '../../assets/client-dyson.svg';
 
 const skillGroups = [
-  { label: 'Strategy & Insights', items: ['Brand Strategy', 'Integrated Marketing', 'Consumer Insights', 'Audience Segmentation', 'Competitive Intelligence', 'Social Listening', 'Go-to-Market Strategy'] },
-  { label: 'Channels & Activation', items: ['Social Media', 'Influencer Marketing', 'Content Strategy', 'Community Management', 'Paid Social', 'Email Marketing', 'Public Relations'] },
-  { label: 'Analytics & Platforms', items: ['GA4', 'MRI-Simmons', 'MediaRadar 360', 'Brandwatch', 'HubSpot', 'Meta Ads Manager', 'LinkedIn Ads', 'Mailchimp'] },
+  { label: 'Strategy & Insights', items: ['Product Marketing', 'Digital Marketing Strategy', 'Brand Strategy', 'Integrated Marketing', 'Consumer Insights', 'Audience Segmentation', 'Competitive Intelligence', 'Market Research', 'Social Listening', 'Positioning & Messaging', 'Sales Enablement', 'Share of Voice'] },
+  { label: 'Channels & Activation', items: ['Social Media Marketing', 'Influencer Marketing', 'Content Strategy', 'Campaign Management', 'Community Management', 'Paid Social', 'A/B Testing', 'Email Marketing', 'Public Relations'] },
+  { label: 'Analytics & Platforms', items: ['GA4', 'Marketing Analytics', 'MRI-Simmons', 'MediaRadar 360', 'Klue', 'Brandwatch', 'HubSpot', 'Google Ads', 'Meta Ads Manager', 'LinkedIn Ads', 'YouTube Ads', 'Mailchimp', 'Canva', 'CapCut', 'Microsoft Word/Excel/PowerPoint', 'ChatGPT', 'Claude'] },
 ];
 
 const brands = [
@@ -33,11 +33,12 @@ export default function AboutPage() {
         <div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">About</h1>
           <p className="text-[#B3B3B3] leading-relaxed">
-            I'm an MBA Marketing candidate at Hofstra University, graduating December 2026, with
-            5+ years of marketing experience spanning U.S. agency and India-based roles. I build
-            brand, social, influencer, and integrated campaigns grounded in consumer insight and
-            competitive intelligence. I've supported brands across financial services, higher
-            education, entertainment, retail, and consumer products.
+            I'm a product marketing analyst and digital marketer with 5+ years across U.S. agency and
+            India-based roles in financial services, higher education, entertainment, retail, and consumer
+            brands. My strongest work sits where research meets execution: understanding an audience, reading
+            the competitive landscape, sharpening the message, and using performance data to improve what
+            goes into market. I'm finishing my MBA in Marketing at Hofstra's Zarb School of Business in
+            December 2026.
           </p>
         </div>
       </div>

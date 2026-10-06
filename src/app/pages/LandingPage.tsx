@@ -37,16 +37,16 @@ const work = [
 ];
 
 const experienceSnapshot = [
-  { title: 'Marketing Strategy Associate', company: 'The EGC Group', period: '2025 – Present' },
+  { title: 'Product Marketing Analyst', company: 'The EGC Group', period: '2025 – Present' },
   { title: 'Marketing Coordinator', company: 'Hofstra University', period: '2025' },
-  { title: 'Sr. Social Media Manager', company: 'The Creative Roots', period: '2023 – 2025' },
-  { title: 'Social Media Strategist', company: 'Pixelfox', period: '2022 – 2023' },
-  { title: 'Marketing Manager', company: 'Energy Mission Machineries', period: '2021 – 2022' },
+  { title: 'Sr. Digital Media Manager', company: 'The Creative Roots', period: '2023 – 2025' },
+  { title: 'Brand Strategist', company: 'Pixelfox', period: '2022 – 2023' },
+  { title: 'Marketing Manager (Part-time)', company: 'Energy Mission Machineries', period: '2021 – 2022' },
 ];
 
 const focusAreas = [
-  'Brand Strategy', 'Integrated Marketing', 'Consumer Insights', 'Competitive Intelligence',
-  'Social Listening', 'Influencer Marketing', 'Paid Social', 'Go-to-Market Strategy',
+  'Product Marketing', 'Competitive Intelligence', 'Market Research', 'Positioning & Messaging',
+  'Social Listening', 'Go-to-Market Strategy', 'Digital Marketing', 'Influencer Marketing',
 ];
 
 export default function LandingPage() {
@@ -69,7 +69,7 @@ export default function LandingPage() {
           transition={{ duration: 0.5 }}
         >
           <div className="px-4 py-2 bg-[#1A2A1A]/60 border border-[#1DB954]/20 rounded-full backdrop-blur-sm">
-            <p className="text-xs text-[#1DB954]/80 font-medium tracking-wide">Marketing Strategist Portfolio</p>
+            <p className="text-xs text-[#1DB954]/80 font-medium tracking-wide">Product Marketing Analyst Portfolio</p>
           </div>
         </motion.div>
 
@@ -96,7 +96,7 @@ export default function LandingPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg md:text-xl text-[#1DB954] font-medium mb-3"
           >
-            MARKETING STRATEGIST | MBA MARKETING STUDENT
+            PRODUCT MARKETING ANALYST | DIGITAL MARKETING
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -104,8 +104,8 @@ export default function LandingPage() {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="text-[#B3B3B3] max-w-xl mx-auto mb-8"
           >
-            I plan and run marketing campaigns, social, paid, and brand work, for companies
-            ranging from financial services to higher education to consumer brands.
+            I turn audience research, competitive intelligence, and performance data into clearer
+            messaging and digital campaigns for financial services, higher education, and consumer brands.
           </motion.p>
 
           <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto mb-8">
@@ -207,9 +207,9 @@ export default function LandingPage() {
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">About</h2>
             <p className="text-[#B3B3B3] leading-relaxed max-w-2xl mb-3">
-              I plan and run marketing campaigns, social, paid, and brand work, for companies ranging
-              from global consumer brands to local event organizers. My approach starts with research,
-              then story, then media. Understand who we're talking to before deciding how loud to say it.
+              I'm a product marketing analyst and digital marketer with 5+ years across U.S. agency and
+              India-based roles. My approach starts with research, then message, then media: understand who
+              we're talking to before deciding how loud to say it.
             </p>
             <Link to="/about" className="text-sm text-[#1DB954] hover:underline">Read the full bio →</Link>
           </div>
