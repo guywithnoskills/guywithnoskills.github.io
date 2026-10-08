@@ -319,7 +319,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
             <div>
               <h3 className="text-white font-semibold mb-2">Malav Akhani</h3>
-              <p className="text-[#B3B3B3] text-sm">Product Marketing Analyst | MBA Candidate</p>
+              <p className="text-[#B3B3B3] text-sm">Product Marketing Manager | MBA Candidate</p>
             </div>
             <div>
               <h4 className="text-white font-medium mb-2">Contact</h4>

@@ -7,7 +7,7 @@ const RESUME_FILE = `${import.meta.env.BASE_URL}Malav-Akhani-Resume.pdf`;
 
 const experiences = [
   {
-    title: 'Product Marketing Analyst',
+    title: 'Product Marketing Manager',
     company: 'The EGC Group · Melville, NY',
     period: 'Dec 2025 – Present',
     tags: ['Product Marketing', 'Competitive Intelligence'],
@@ -170,7 +170,7 @@ export default function ResumePage() {
         </div>
 
         <p className="text-[#B3B3B3] mb-14 max-w-xl">
-          Product marketing analyst and digital marketer with 5+ years across U.S. agency and India-based roles.
+          Product marketing manager and digital marketer with 5+ years across U.S. agency and India-based roles.
           Uses competitive intelligence, audience research, message testing, and performance data to sharpen
           campaign strategy and sales prospecting.
         </p>

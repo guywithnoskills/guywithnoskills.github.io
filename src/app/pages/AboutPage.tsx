@@ -33,7 +33,7 @@ export default function AboutPage() {
         <div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">About</h1>
           <p className="text-[#B3B3B3] leading-relaxed">
-            I'm a product marketing analyst and digital marketer with 5+ years across U.S. agency and
+            I'm a product marketing manager and digital marketer with 5+ years across U.S. agency and
             India-based roles in financial services, higher education, entertainment, retail, and consumer
             brands. My strongest work sits where research meets execution: understanding an audience, reading
             the competitive landscape, sharpening the message, and using performance data to improve what

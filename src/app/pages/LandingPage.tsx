@@ -37,7 +37,7 @@ const work = [
 ];
 
 const experienceSnapshot = [
-  { title: 'Product Marketing Analyst', company: 'The EGC Group', period: '2025 – Present' },
+  { title: 'Product Marketing Manager', company: 'The EGC Group', period: '2025 – Present' },
   { title: 'Marketing Coordinator', company: 'Hofstra University', period: '2025' },
   { title: 'Sr. Digital Media Manager', company: 'The Creative Roots', period: '2023 – 2025' },
   { title: 'Brand Strategist', company: 'Pixelfox', period: '2022 – 2023' },
@@ -69,7 +69,7 @@ export default function LandingPage() {
           transition={{ duration: 0.5 }}
         >
           <div className="px-4 py-2 bg-[#1A2A1A]/60 border border-[#1DB954]/20 rounded-full backdrop-blur-sm">
-            <p className="text-xs text-[#1DB954]/80 font-medium tracking-wide">Product Marketing Analyst Portfolio</p>
+            <p className="text-xs text-[#1DB954]/80 font-medium tracking-wide">Product Marketing Manager Portfolio</p>
           </div>
         </motion.div>
 
@@ -96,7 +96,7 @@ export default function LandingPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg md:text-xl text-[#1DB954] font-medium mb-3"
           >
-            PRODUCT MARKETING ANALYST | DIGITAL MARKETING
+            PRODUCT MARKETING MANAGER | DIGITAL MARKETING
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -207,7 +207,7 @@ export default function LandingPage() {
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">About</h2>
             <p className="text-[#B3B3B3] leading-relaxed max-w-2xl mb-3">
-              I'm a product marketing analyst and digital marketer with 5+ years across U.S. agency and
+              I'm a product marketing manager and digital marketer with 5+ years across U.S. agency and
               India-based roles. My approach starts with research, then message, then media: understand who
               we're talking to before deciding how loud to say it.
             </p>
