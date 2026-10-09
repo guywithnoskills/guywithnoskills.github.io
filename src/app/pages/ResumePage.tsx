@@ -17,7 +17,7 @@ const experiences = [
       'Drove 19–38% higher engagement across four client accounts by turning audience and performance data into digital campaign strategy, message tests, and creative recommendations using Google Ads, Meta Ads Manager, and Brandwatch',
       "Informed a content and messaging shift associated with a 29% increase in total interactions by benchmarking eight competitor brands and measuring Jovia Financial Credit Union's share of voice across Instagram, Facebook, LinkedIn, TikTok, and X using Brandwatch",
       "Lifted social engagement 16% and improved conversion rates by using MRI-Simmons Catalyst to identify audience segments and refine Molloy University's targeting, messages, and content plan",
-      'Contributed to $500K in new business won by the agency team and cut prospecting time about 30% by synthesizing 40+ competitor media-spend reports with Klue, HubSpot, and Google Analytics data into prospecting insights',
+      'Contributed to $997K in new business won by the agency team and cut prospecting time about 30% by synthesizing 40+ competitor media-spend reports with Klue, HubSpot, and Google Analytics data into prospecting insights',
       'Ran market research surveys for Windward and Catholic Health, translating audience feedback into customer insights for account messaging decisions',
       "Contributed to a 57% increase in profile visits for Designs for Vision's creator marketing program by coordinating creator identification, outreach, briefing, and deliverable planning for 15 dental creators",
     ],
