@@ -31,8 +31,8 @@ const brands = [
 ];
 
 const work = [
-  { title: 'Social Media Listening Report', tag: 'Jovia Financial Credit Union', result: "An 8x jump in mentions and 14x surge in reach for Jovia's Long Island Marathon sponsorship, tracked week over week", impact: 147.7, impactLabel: 'Impressions growth' },
-  { title: 'Nursing Brand Persona', tag: 'Molloy University', result: 'Built a data-driven prospect persona from MRI-Simmons national survey data to guide nursing recruitment messaging', impact: 63, impactLabel: 'See it as a career, not a job' },
+  { title: 'Social Media Listening Report', tag: 'Jovia Financial Credit Union', result: "Benchmarked 8 competitors and tracked an 8x jump in mentions and 14x surge in reach for Jovia's Long Island Marathon sponsorship, tracked week over week", impact: 147.7, impactLabel: 'Impressions growth' },
+  { title: 'Nursing Brand Persona', tag: 'Molloy University', result: 'Used MRI-Simmons audience segmentation to build a data-driven prospect persona guiding nursing recruitment messaging', impact: 63, impactLabel: 'See it as a career, not a job' },
   { title: 'Dyson India Localization', tag: 'Global Localization', result: "Adapted Dyson's global campaign for the Indian market while staying on brand" },
 ];
 
