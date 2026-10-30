@@ -1,6 +1,31 @@
 import React from 'react';
 import { DivergingBarChart, DonutChart, StatChips } from './Charts';
 
+export function SlingPerformance() {
+  return (
+    <div className="mt-5 pt-5 border-t border-[#333] space-y-4">
+      <p className="text-xs text-[#B3B3B3] uppercase tracking-wide">
+        2024 T20 World Cup campaign · two-phase GTM results
+      </p>
+      <DivergingBarChart
+        live={false}
+        data={[
+          { label: 'Subscription Growth', value: 'Phase 1 → 2', change: 25 },
+          { label: 'Reach', value: 'Phase 1 → 2', change: 30 },
+        ]}
+      />
+      <StatChips
+        items={[
+          { label: 'Offer', value: '$10' },
+          { label: 'Phases', value: '2' },
+          { label: 'Platforms', value: '3' },
+          { label: 'Dedicated Activation', value: 'IND v PAK' },
+        ]}
+      />
+    </div>
+  );
+}
+
 export function JoviaPerformance() {
   return (
     <div className="mt-5 pt-5 border-t border-[#333] space-y-4">

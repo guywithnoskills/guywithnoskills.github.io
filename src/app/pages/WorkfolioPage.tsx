@@ -14,7 +14,7 @@ import {
   Download
 } from 'lucide-react';
 import { useMusic } from '../components/MusicContext';
-import { JoviaPerformance, Jakes58Performance } from '../components/CaseStudyCharts';
+import { SlingPerformance, JoviaPerformance, Jakes58Performance } from '../components/CaseStudyCharts';
 import { ImpactStat } from '../components/ImpactStat';
 import { SpotlightCard } from '../components/SpotlightCard';
 import jakes58Logo from '../../assets/client-jakes58.webp';
@@ -33,7 +33,8 @@ const projects = [
     videoUrl: null,
     category: 'Brand Strategy · GTM',
     impact: 30,
-    impactLabel: 'Reach growth'
+    impactLabel: 'Reach growth',
+    chart: <SlingPerformance />
   },
   {
     id: 'jovia-listening',
