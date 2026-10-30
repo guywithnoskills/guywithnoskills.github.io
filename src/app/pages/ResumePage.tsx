@@ -9,43 +9,43 @@ const experiences = [
   {
     title: 'Product Marketing Manager',
     company: 'The EGC Group · Melville, NY',
-    period: 'Dec 2025 – Present',
-    tags: ['Product Marketing', 'Competitive Intelligence'],
+    period: 'Jan 2026 – Present',
+    tags: ['Product Marketing', 'GTM Strategy', 'Competitive Intelligence'],
     impact: 57,
     impactLabel: 'Profile visits',
     achievements: [
-      'Drove 19–38% higher engagement across four client accounts by turning audience and performance data into digital campaign strategy, message tests, and creative recommendations using Google Ads, Meta Ads Manager, and Brandwatch',
+      'Owned positioning, messaging, and GTM recommendations for four client accounts, translating audience and performance data into message tests and creative recommendations that lifted engagement by up to 38%, using Google Ads, Meta Ads Manager, and Brandwatch',
       "Informed a content and messaging shift associated with a 29% increase in total interactions by benchmarking eight competitor brands and measuring Jovia Financial Credit Union's share of voice across Instagram, Facebook, LinkedIn, TikTok, and X using Brandwatch",
-      "Lifted social engagement 16% and improved conversion rates by using MRI-Simmons Catalyst to identify audience segments and refine Molloy University's targeting, messages, and content plan",
-      'Contributed to $997K in new business won by the agency team and cut prospecting time about 30% by synthesizing 40+ competitor media-spend reports with Klue, HubSpot, and Google Analytics data into prospecting insights',
-      'Ran market research surveys for Windward and Catholic Health, translating audience feedback into customer insights for account messaging decisions',
-      "Contributed to a 57% increase in profile visits for Designs for Vision's creator marketing program by coordinating creator identification, outreach, briefing, and deliverable planning for 15 dental creators",
+      "Became EGC's first Claude adopter, building nearly 14 AI-powered workflows and tools that shifted the entire team onto Claude, cutting competitive intelligence turnaround 62% and freeing up 22% of team capacity",
+      'Built pitch decks, prospect profiles, competitor comparisons, talking points, and call-preparation briefs for agency new business; analyzed 40+ competitive and CRM reports and win-loss patterns, supporting $997K in won business and reducing prospecting time by approximately 30%',
+      "Translated customer research for Windward and Catholic Health into audience, positioning, and GTM recommendations; launched Designs for Vision's 15-partner creator program, increasing profile visits by 57%",
     ],
   },
   {
-    title: 'Marketing Coordinator',
+    title: 'Product Marketing Coordinator',
     company: 'Hofstra University · Hempstead, NY',
-    period: 'Jan 2025 – Nov 2025',
-    tags: ['Content Design', 'Email Marketing'],
+    period: 'Jan 2025 – Dec 2025',
+    tags: ['GTM Planning', 'Email Marketing'],
     impact: 30,
     impactLabel: 'Recruitment growth',
     achievements: [
-      "Improved professional image 30% and student engagement 10% by redesigning Hofstra's digital communications across LinkedIn, Instagram, and the website using Canva-crafted visual content and brand-consistent design",
-      "Grew Hofstra's recruitment pipeline 30% by running Mailchimp email campaigns to a 150K-contact database",
-      'Lifted event visibility 25% and attendance 15% by driving event awareness through organic and paid Meta/Facebook promotion',
+      "Repositioned Hofstra's brand messaging and visual identity across LinkedIn, Instagram, and the website, lifting professional brand perception 30% and student engagement 10%",
+      "Built the go-to-market plan for Hofstra's flagship events, segmenting audiences and pairing organic with paid Meta/Facebook promotion to lift visibility 25% and attendance 15%",
+      'Built a Claude-automated workflow to segment a 150K-contact prospective-student database and run targeted Mailchimp campaigns, contributing to 30% recruitment-pipeline growth',
     ],
   },
   {
-    title: 'Sr. Digital Media Manager',
+    title: 'Product Marketing Manager',
     company: 'The Creative Roots · Mumbai, MH',
     period: 'Dec 2023 – Jan 2025',
-    tags: ['Influencer Strategy', 'Content Campaigns'],
+    tags: ['GTM Strategy', 'Brand Positioning'],
     impact: 30,
-    impactLabel: 'Audience reach expansion',
+    impactLabel: 'Reach growth',
     achievements: [
-      "Grew subscriptions 25% and reach 30% by leading Sling TV's Cricket World Cup campaign across Instagram, Facebook, and Twitter",
-      'Raised brand engagement 20% by building brand narratives and influencer content strategy for athletes including Hardik Pandya and Virat Kohli, using AI-assisted scheduling and social-listening tools',
-      'Grew average ROI 20% across a 10+ brand roster, including Samsung and other consumer brands, by running social media content strategy and using performance data to guide creative and content-calendar decisions',
+      "Built and led a two-phase GTM strategy for Sling TV's 2024 T20 World Cup campaign, positioning its $10 offer to South Asian cricket audiences and extending the value proposition from tournament acquisition to Dakshin and Desi entertainment; contributed to 25% subscription growth and a 30% increase in reach",
+      "Developed the 'World Cup Experience Home Delivered' campaign proposition and audience-specific social, influencer, and SEO content plan, including a dedicated India versus Pakistan activation across Instagram, Facebook, and X",
+      'Built brand narratives and influencer content strategy for athletes including Hardik Pandya and Virat Kohli, raising brand engagement by 20%, using AI-assisted scheduling and social-listening tools',
+      'Translated brand, audience, and channel insights into creative and investment recommendations for a 10+ brand roster, including Godrej and Samsung, contributing to an average ROI increase of 20%',
     ],
   },
   {
@@ -170,9 +170,9 @@ export default function ResumePage() {
         </div>
 
         <p className="text-[#B3B3B3] mb-14 max-w-xl">
-          Product marketing manager and digital marketer with 5+ years across U.S. agency and India-based roles.
-          Uses competitive intelligence, audience research, message testing, and performance data to sharpen
-          campaign strategy and sales prospecting.
+          Product marketing manager with 5+ years across agency and in-house marketing, applying competitive
+          intelligence, audience research, messaging, and campaign performance data to sharpen GTM strategy,
+          positioning, and sales enablement.
         </p>
 
         <div ref={timelineRef} className="relative">

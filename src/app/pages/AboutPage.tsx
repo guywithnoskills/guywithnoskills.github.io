@@ -10,13 +10,14 @@ import molloyLogo from '../../assets/client-molloy.webp';
 import dysonLogo from '../../assets/client-dyson.svg';
 
 const skillGroups = [
-  { label: 'Strategy & Insights', items: ['Product Marketing', 'Digital Marketing Strategy', 'Brand Strategy', 'Integrated Marketing', 'Consumer Insights', 'Audience Segmentation', 'Competitive Intelligence', 'Market Research', 'Social Listening', 'Positioning & Messaging', 'Sales Enablement', 'Share of Voice'] },
-  { label: 'Channels & Activation', items: ['Social Media Marketing', 'Influencer Marketing', 'Content Strategy', 'Campaign Management', 'Community Management', 'Paid Social', 'A/B Testing', 'Email Marketing', 'Public Relations'] },
-  { label: 'Analytics & Platforms', items: ['GA4', 'Marketing Analytics', 'MRI-Simmons', 'MediaRadar 360', 'Klue', 'Brandwatch', 'HubSpot', 'Google Ads', 'Meta Ads Manager', 'LinkedIn Ads', 'YouTube Ads', 'Mailchimp', 'Canva', 'CapCut', 'Microsoft Word/Excel/PowerPoint', 'ChatGPT', 'Claude'] },
+  { label: 'Product Marketing & GTM', items: ['GTM Strategy', 'Positioning & Messaging', 'ICP & Persona Development', 'Customer Research', 'Competitive Intelligence', 'Win-Loss Analysis', 'Offer Positioning & Packaging', 'Launch Planning', 'Sales Enablement', 'Acquisition & Lifecycle Strategy', 'Brand Strategy', 'Market Research'] },
+  { label: 'Activation & Channels', items: ['Integrated Campaigns', 'Influencer & Partner Marketing', 'Social Media Marketing', 'Content Strategy', 'Campaign Management', 'Community Management', 'Paid Social', 'Email Marketing', 'Public Relations'] },
+  { label: 'Analytics & Platforms', items: ['GA4', 'Share of Voice', 'MRI-Simmons', 'MediaRadar 360', 'Klue', 'Brandwatch', 'HubSpot CRM', 'Google Ads', 'Meta Ads Manager', 'LinkedIn Ads', 'YouTube Ads', 'Mailchimp', 'Canva', 'CapCut'] },
 ];
 
 const brands = [
   { name: 'The EGC Group', logo: egcLogo },
+  { name: 'Sling TV', logo: null },
   { name: 'Jovia Financial Credit Union', logo: joviaLogo },
   { name: 'Molloy University', logo: molloyLogo },
   { name: "Jake's 58 Casino Hotel", logo: jakes58Logo },
@@ -33,12 +34,12 @@ export default function AboutPage() {
         <div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">About</h1>
           <p className="text-[#B3B3B3] leading-relaxed">
-            I'm a product marketing manager and digital marketer with 5+ years across U.S. agency and
-            India-based roles in financial services, higher education, entertainment, retail, and consumer
-            brands. My strongest work sits where research meets execution: understanding an audience, reading
-            the competitive landscape, sharpening the message, and using performance data to improve what
-            goes into market. I'm finishing my MBA in Marketing at Hofstra's Zarb School of Business in
-            December 2026.
+            I'm a product marketing manager with 5+ years across U.S. agency and India-based roles in
+            financial services, higher education, entertainment, retail, and consumer brands, applying
+            competitive intelligence, audience research, messaging, and campaign performance data to sharpen
+            GTM strategy, positioning, and sales enablement. At EGC, I've contributed to $997K in new business
+            won by the agency team and engagement gains of up to 38% across client accounts. I'm finishing my
+            MBA in Marketing at Hofstra's Zarb School of Business in December 2026.
           </p>
         </div>
       </div>

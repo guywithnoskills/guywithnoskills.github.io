@@ -25,6 +25,17 @@ import dysonLogo from '../../assets/client-dyson.svg';
 
 const projects = [
   {
+    id: 'sling-gtm',
+    title: 'Sling TV Brand Repositioning & GTM',
+    brand: { name: 'Sling TV', logo: null },
+    description: "Sling's own brand tracking pointed to a brand problem, not a price problem: unaided awareness and distinctiveness had drifted to multi-year lows, and the brand was winning on price alone in a category where every competitor looked alike. The repositioning mandate was to stand for control, not price. I translated that into a two-phase GTM for South Asian cricket audiences during the 2024 T20 World Cup.",
+    details: "Phase one led with the $10 offer to acquire cricket fans; phase two extended the value proposition into Sling's Dakshin and Desi entertainment bundle to convert that acquisition into retention, backed by a dedicated India vs. Pakistan activation across Instagram, Facebook, and X. Contributed to 25% subscription growth and a 30% increase in reach.",
+    videoUrl: null,
+    category: 'Brand Strategy · GTM',
+    impact: 30,
+    impactLabel: 'Reach growth'
+  },
+  {
     id: 'jovia-listening',
     title: 'Social Media Listening Report',
     brand: { name: 'Jovia Financial Credit Union', logo: joviaLogo },
@@ -163,7 +174,11 @@ export default function WorkfolioPage() {
                     >
                       <div className="flex items-center gap-3 pb-4 mb-4 border-b border-white/10">
                         <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden flex-shrink-0">
-                          <img src={project.brand.logo} alt={project.brand.name} className="w-7 h-7 object-contain" />
+                          {project.brand.logo ? (
+                            <img src={project.brand.logo} alt={project.brand.name} className="w-7 h-7 object-contain" />
+                          ) : (
+                            <span className="text-black font-bold text-[10px] text-center px-1">{project.brand.name.split(' ').map((w) => w[0]).join('').slice(0, 3)}</span>
+                          )}
                         </div>
                         <div>
                           <p className="text-[10px] uppercase tracking-wide text-[#B3B3B3]">Client</p>

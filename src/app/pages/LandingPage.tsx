@@ -22,6 +22,7 @@ const stats = [
 
 const brands = [
   { name: 'The EGC Group', logo: egcLogo },
+  { name: 'Sling TV', logo: null },
   { name: 'Jovia Financial Credit Union', logo: joviaLogo },
   { name: 'Molloy University', logo: molloyLogo },
   { name: "Jake's 58 Casino Hotel", logo: jakes58Logo },
@@ -31,15 +32,15 @@ const brands = [
 ];
 
 const work = [
+  { title: 'Sling TV Brand Repositioning & GTM', tag: 'Sling TV', result: "Built a two-phase GTM strategy that moved Sling TV's $10 World Cup offer from a price-led acquisition hook into a positioning story, extending value into its Dakshin and Desi entertainment bundle for retention", impact: 30, impactLabel: 'Reach growth' },
   { title: 'Social Media Listening Report', tag: 'Jovia Financial Credit Union', result: "Benchmarked 8 competitors and tracked an 8x jump in mentions and 14x surge in reach for Jovia's Long Island Marathon sponsorship, tracked week over week", impact: 147.7, impactLabel: 'Impressions growth' },
   { title: 'Nursing Brand Persona', tag: 'Molloy University', result: 'Used MRI-Simmons audience segmentation to build a data-driven prospect persona guiding nursing recruitment messaging', impact: 63, impactLabel: 'See it as a career, not a job' },
-  { title: 'Dyson India Localization', tag: 'Global Localization', result: "Adapted Dyson's global campaign for the Indian market while staying on brand" },
 ];
 
 const experienceSnapshot = [
-  { title: 'Product Marketing Manager', company: 'The EGC Group', period: '2025 – Present' },
-  { title: 'Marketing Coordinator', company: 'Hofstra University', period: '2025' },
-  { title: 'Sr. Digital Media Manager', company: 'The Creative Roots', period: '2023 – 2025' },
+  { title: 'Product Marketing Manager', company: 'The EGC Group', period: 'Jan 2026 – Present' },
+  { title: 'Product Marketing Coordinator', company: 'Hofstra University', period: 'Jan – Dec 2025' },
+  { title: 'Product Marketing Manager', company: 'The Creative Roots', period: 'Dec 2023 – Jan 2025' },
   { title: 'Brand Strategist', company: 'Pixelfox', period: '2022 – 2023' },
   { title: 'Marketing Manager (Part-time)', company: 'Energy Mission Machineries', period: '2021 – 2022' },
 ];
@@ -104,8 +105,8 @@ export default function LandingPage() {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="text-[#B3B3B3] max-w-xl mx-auto mb-8"
           >
-            I turn audience research, competitive intelligence, and performance data into clearer
-            messaging and digital campaigns for financial services, higher education, and consumer brands.
+            I turn audience research, competitive intelligence, and performance data into GTM strategy,
+            positioning, and sales enablement for financial services, higher education, and consumer brands.
           </motion.p>
 
           <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto mb-8">
@@ -207,9 +208,9 @@ export default function LandingPage() {
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">About</h2>
             <p className="text-[#B3B3B3] leading-relaxed max-w-2xl mb-3">
-              I'm a product marketing manager and digital marketer with 5+ years across U.S. agency and
-              India-based roles. My approach starts with research, then message, then media: understand who
-              we're talking to before deciding how loud to say it.
+              I'm a product marketing manager with 5+ years across U.S. agency and India-based roles,
+              applying competitive intelligence, audience research, and performance data to GTM strategy,
+              positioning, and sales enablement.
             </p>
             <Link to="/about" className="text-sm text-[#1DB954] hover:underline">Read the full bio →</Link>
           </div>
